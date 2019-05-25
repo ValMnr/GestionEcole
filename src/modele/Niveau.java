@@ -21,7 +21,7 @@ public class Niveau{
 		this.nom=nom;
 	}
 	public String getNom(){
-		return this.nom
+		return this.nom;
 	}
 
 

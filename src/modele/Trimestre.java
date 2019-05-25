@@ -1,6 +1,7 @@
 /**
 	*Classe du Trimestre
 	*/
+package modele;
 
 public class Trimestre{
 
@@ -15,7 +16,7 @@ public class Trimestre{
 	/**
 		* Constructeur avec tout les paramètres
 		*/
-
+        public Trimestre(){};
 	public Trimestre(int id, int numero, String debut, String fin, int anneeId){
 
 		this.id=id;
@@ -53,7 +54,7 @@ public class Trimestre{
 		this.anneeId=anneeId;
 	}
 	public int getAnneId(){
-		return this.anneeId;
+		return anneeId;
 	}
 
 
