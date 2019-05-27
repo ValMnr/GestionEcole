@@ -1,8 +1,9 @@
-package DAO;
+package controleur.DAO;
+import controleur.DAO.DAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import modele.*;
-package com.sdz.dao.implement;
+// package com.sdz.dao.implement;
 
 
 
@@ -15,26 +16,31 @@ public class TrimestreDAO extends DAO<Trimestre> {
         super(conn);
         
     }
+    @Override
     public int getSize() throws SQLException{
         ArrayList<String> liste = new ArrayList<>();
-        liste= connect.remplirChampsRequete("SELECT COUNT(*) FROM trimestre");
+        liste= connect.remplirChampsRequete("SELECT COUNT(*) FROM Trimestre");
         int size=Integer.parseInt(liste.get(0));       
         return size;
          
     }
 
+    @Override
   public boolean create(Trimestre obj) {
     return false;
   }
 
+    @Override
   public boolean delete(Trimestre obj) {
     return false;
   }
    
+    @Override
   public boolean update(Trimestre obj) {
     return false;
   }
    
+    @Override
   public Trimestre find(int id) {
       
      Trimestre trim= new Trimestre();
@@ -62,8 +68,5 @@ public class TrimestreDAO extends DAO<Trimestre> {
     return trim;
   }
 
-}
-
-    
 }
 
