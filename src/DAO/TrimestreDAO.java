@@ -23,7 +23,7 @@ public class TrimestreDAO extends DAO<Trimestre> {
 
   public boolean create(Trimestre obj) {
        Connexion connex = this.getConnex();
-       String values = "'"+obj.getId()+"','"+obj.getNumero()+"','"+obj.getDebut()+"','"+obj.getFin()+"','"+obj.getAnneId()+"'";
+       String values = "'"+obj.getId()+"','"+obj.getNumero()+"','"+obj.getDebut()+"','"+obj.getFin()+"','"+obj.getAnneeId()+"'";
         try {         
             connex.executeUpdate("INSERT INTO trimestre VALUES("+values+")");
             return true;
@@ -48,8 +48,19 @@ public class TrimestreDAO extends DAO<Trimestre> {
   }
    
   public boolean update(Trimestre obj) {
+      Connexion connex = this.getConnex();
+       String values = "id="+obj.getId()+", numero="+obj.getNumero()+",debut='"+obj.getDebut()+"',fin='"+obj.getFin()+"',anneescolaireId="+obj.getAnneeId();
+       String req="UPDATE trimestre SET "+values+" WHERE id="+obj.getId();
+       System.out.println(req);
+       try {         
+            connex.executeUpdate(req);
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(TrimestreDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return false; 
       
-    return false;
+  
   }
    
   public Trimestre find(int id) {
