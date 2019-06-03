@@ -14,25 +14,54 @@ import static java.util.stream.IntStream.range;
                 String login="root";
                 String password="";
             
- 		//Trimestre tri1=new Trimestre(1,1,"1/1/19","31/3/19", 2018);
                 Connexion connex = new Connexion(namedb,login,password);
-                //ArrayList<String> liste = connex1.remplirChampsRequete("SELECT * From trimestre");
-                //System.out.println(liste);
+
                 
-                Trimestre trimtest= new Trimestre(15,15,"01/01/01","01/01/01",2019);
+              
+                
+                           // /** TEST Trimestre
+                DAO<Trimestre> trimestreDao = new TrimestreDAO(connex); 
+                Trimestre trimtest = new Trimestre(25,25,"01/01/22","01/04/22",2022);
+                //trimestreDao.create(trimtest);
+                trimtest.setNumero(33);
+                trimestreDao.update(trimtest);
+                //trimestreDao.delete(trimtest);
+                
+               // */
+                
+                
+                /** TEST ANNEE SCOLAIRE
+
+                DAO<AnneeScolaire> anneescolaireDao = new AnneeScolaireDAO(connex);
+                AnneeScolaire anneetest= new AnneeScolaire(2029);
+                anneescolaireDao.create(anneetest);
+                anneetest.setId(1);
+                anneescolaireDao.update(anneetest);
+                anneescolaireDao.delete(anneetest);
+                * /
+                
+                
                 
                 DAO<Trimestre> trimestreDao = new TrimestreDAO(connex);
                 
-                trimestreDao.create(trimtest);
-                trimestreDao.delete(trimestreDao.find(14));
-
+                /** TEST BULLETIN
+                DAO<Bulletin> bulletinDao = new BulletinDAO(connex); 
+                Bulletin bulltest = new Bulletin(21,1,1,"Lorem");
+                bulletinDao.create(bulltest);
+                bulltest.setAppreciation("Test O Test");
+                bulletinDao.update(bulltest);
+                bulletinDao.delete(bulltest);
                 
-                //System.out.println(trimestreDao.getSize());
-               // for(int i=1;i<trimestreDao.getSize();i++){
-                //    Trimestre trimi = trimestreDao.find(i);
-                //    System.out.println(trimi.getDebut());
-               // }
+                */
                 
+                  
+                
+                /**
+                bulletinDao.delete(bulltest);
+                bulletinDao.delete(bulltest2);
+                anneescolaireDao.delete(anneetest);
+                trimestreDao.delete(trimtest);
+                 */
               
  	}
  }

@@ -25,10 +25,14 @@ public class TrimestreDAO extends DAO<Trimestre> {
     @Override
   public boolean create(Trimestre obj) {
        Connexion connex = this.getConnex();
+<<<<<<< Reporting:ProjetS2/src/controleur/DAO/TrimestreDAO.java
        String values = "'"+obj.getId()+"','"+obj.getNumero()+"','"+obj.getDebut()+"','"+obj.getFin()+"','"+obj.getAnneId()+"'";
 <<<<<<< Reporting:ProjetS2/src/controleur/DAO/TrimestreDAO.java
         try {
 =======
+=======
+       String values = "'"+obj.getId()+"','"+obj.getNumero()+"','"+obj.getDebut()+"','"+obj.getFin()+"','"+obj.getAnneeId()+"'";
+>>>>>>> Trimestre/Bulletin/Annescolaire DAO implentée:src/DAO/TrimestreDAO.java
         try {         
 >>>>>>> TrimestreDAO fully implemented:src/DAO/TrimestreDAO.java
             connex.executeUpdate("INSERT INTO trimestre VALUES("+values+")");
@@ -67,11 +71,27 @@ public class TrimestreDAO extends DAO<Trimestre> {
 
   public boolean update(Trimestre obj) {
 <<<<<<< Reporting:ProjetS2/src/controleur/DAO/TrimestreDAO.java
+<<<<<<< Reporting:ProjetS2/src/controleur/DAO/TrimestreDAO.java
 
 =======
       
 >>>>>>> TrimestreDAO fully implemented:src/DAO/TrimestreDAO.java
     return false;
+=======
+      Connexion connex = this.getConnex();
+       String values = "id="+obj.getId()+", numero="+obj.getNumero()+",debut='"+obj.getDebut()+"',fin='"+obj.getFin()+"',anneescolaireId="+obj.getAnneeId();
+       String req="UPDATE trimestre SET "+values+" WHERE id="+obj.getId();
+       System.out.println(req);
+       try {         
+            connex.executeUpdate(req);
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(TrimestreDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return false; 
+      
+  
+>>>>>>> Trimestre/Bulletin/Annescolaire DAO implentée:src/DAO/TrimestreDAO.java
   }
 
   public Trimestre find(int id) {
