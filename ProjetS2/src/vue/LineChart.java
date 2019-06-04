@@ -10,5 +10,5 @@ package vue;
  * @author manuelpellequer
  */
 public class LineChart {
-    
+
 }

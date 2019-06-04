@@ -33,5 +33,7 @@ public class TestReporting {
         ChartFrame frame = new ChartFrame("First", chart);
         frame.pack();
         frame.setVisible(true);
+
+        // TODO : tester la creation d'objets avec les data sets depuis le main
     }
 }
