@@ -8,6 +8,6 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: tiger
-      MYSQL_DATABASE: Ecole
+      MYSQL_DATABASE: ecole
       MYSQL_USER: ecole
       MYSQL_PASSWORD: ecole

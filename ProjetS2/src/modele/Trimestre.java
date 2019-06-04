@@ -53,7 +53,7 @@ public class Trimestre{
 	public void setAnneeId(int anneeId){
 		this.anneeId=anneeId;
 	}
-	public int getAnneId(){
+	public int getAnneeId(){
 		return anneeId;
 	}
 

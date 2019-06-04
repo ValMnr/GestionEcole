@@ -13,7 +13,7 @@ import static java.util.stream.IntStream.range;
 
  	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-                String namedb="Ecole";
+                String namedb="ecole";
                 String login="root";
                 String password="tiger";
 
