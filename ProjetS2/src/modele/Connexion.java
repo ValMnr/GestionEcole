@@ -5,16 +5,16 @@
 package modele;
 
 /*
- * 
+ *
  * Librairies importées
  */
 import java.sql.*;
 import java.util.ArrayList;
 
 /**
- * 
+ *
  * Connexion a votre BDD locale ou à distance sur le serveur de l'ECE via le tunnel SSH
- * 
+ *
  * @author segado
  */
 public class Connexion {
@@ -56,7 +56,7 @@ public class Connexion {
         // url de connexion "jdbc:mysql://localhost:3305/usernameECE"
         String urlDatabase = "jdbc:mysql://localhost/" + nameDatabase;
 
-        //création d'une connexion JDBC à la base 
+        //création d'une connexion JDBC à la base
         conn = DriverManager.getConnection(urlDatabase, loginDatabase, passwordDatabase);
 
         // création d'un ordre SQL (statement)
@@ -163,7 +163,7 @@ public class Connexion {
     /**
      * Methode qui retourne l'ArrayList des champs de la requete en parametre
      * @param requete
-     * @return 
+     * @return
      * @throws java.sql.SQLException
      */
     public ArrayList remplirChampsRequete(String requete) throws SQLException {
@@ -179,7 +179,7 @@ public class Connexion {
         // creation d'une ArrayList de String
         ArrayList<String> liste = new ArrayList<String>();
 
-        // tant qu'il reste une ligne 
+        // tant qu'il reste une ligne
         while (rset.next()) {
             String champs;
             champs = rset.getString(1); // ajouter premier champ
@@ -197,7 +197,7 @@ public class Connexion {
         }
 
                          //System.out.println(liste);
- 
+
         // Retourner l'ArrayList
         return liste;
     }
@@ -210,6 +210,6 @@ public class Connexion {
     public void executeUpdate(String requeteMaj) throws SQLException {
         stmt.executeUpdate(requeteMaj);
     }
-    
-  
+
+
 }
