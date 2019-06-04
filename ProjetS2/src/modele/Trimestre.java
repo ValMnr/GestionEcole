@@ -57,6 +57,10 @@ public class Trimestre{
 		return anneeId;
 	}
 
+    public String getAnneId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 
 }
