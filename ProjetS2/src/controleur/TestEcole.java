@@ -33,7 +33,7 @@ import vue.Menu;
                 do {
                   choice = scan.nextLine();
                   switch (choice) {
-                    case "0":
+                    case "1":
                     System.out.println("Trimestre DAO");
                     DAO<Trimestre> trimestreDao = new TrimestreDAO(connex1);
                     //System.out.println(trimestreDao.getSize());
@@ -43,7 +43,7 @@ import vue.Menu;
                     }
                     menu.afficher();
                     break;
-                    case "1" :
+                    case "2" :
                     System.out.println("Reporting");
                     // create a dataset...
                     DefaultPieDataset dataset = new DefaultPieDataset();
@@ -70,5 +70,7 @@ import vue.Menu;
 
                   } // end of switch
                 } while (!choice.equals("q")); // end of loop
+                // if end of the while loop
+                System.exit(0);
  	 } // end of the main
  } // end of the class

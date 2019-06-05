@@ -19,6 +19,7 @@ public class Menu {
     System.out.println("-------------------MENU-------------------");
     System.out.println("(1) Trimestre DAO");
     System.out.println("(2) Reporting");
+    System.out.println("(q) Quitter");
     System.out.println("------------------------------------------");
     System.out.println("Votre choix: ");
   }
