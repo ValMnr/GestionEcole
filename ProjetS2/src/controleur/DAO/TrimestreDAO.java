@@ -57,7 +57,7 @@ public class TrimestreDAO extends DAO<Trimestre> {
   public Trimestre find(int id) {
 
      Trimestre trim= new Trimestre();
-    ArrayList<String> result = new ArrayList<String>();
+     ArrayList<String> result = new ArrayList<String>();
 
 
      try{
@@ -73,5 +73,4 @@ public class TrimestreDAO extends DAO<Trimestre> {
 
     return trim;
   }
-
 }

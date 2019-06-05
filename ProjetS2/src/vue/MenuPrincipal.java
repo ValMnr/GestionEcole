@@ -150,6 +150,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnreportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreportActionPerformed
         // TODO add your handling code here:
+        new Dashboard().setVisible(true);
     }//GEN-LAST:event_btnreportActionPerformed
 
     private void btnrechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrechercheActionPerformed
