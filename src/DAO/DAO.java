@@ -1,9 +1,16 @@
+
+
 package DAO;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import modele.*;
 
+
+/**
+ * @see https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/26830-liez-vos-tables-avec-des-objets-java-le-pattern-dao
+ * @author Valentin
+ */
 
 public abstract class DAO<T> {
   protected Connexion connect = null;

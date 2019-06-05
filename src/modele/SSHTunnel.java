@@ -29,7 +29,7 @@ public class SSHTunnel {
      * @param password Mot de passe ECE
      * @param firstHost Premier hôte avec lequel il faut établir un tunnel SSH
      * @param secondHost Second hôte avec lequel il faut établir un tunnel SSH
-     * @param firstHostPort Port utiliser pour se connecter au premier hôte
+     * @param firsgetHostPort Port utiliser pour se connecter au premier hôte
      * @param secondHostPort Port utiliser pour se connecter au second hôte
      */
     public SSHTunnel(String username, String password, String firstHost, String secondHost, int firstHostPort, int secondHostPort) {
