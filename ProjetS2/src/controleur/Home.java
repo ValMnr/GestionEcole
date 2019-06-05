@@ -5,6 +5,8 @@
  */
 package controleur;
 
+import vue.MenuPrincipal;
+
 /**
  *
  * @author manuelpellequer
@@ -77,8 +79,13 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+    * méthode pour afficher la fenetre dans le bouton
+    */
     private void beginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginActionPerformed
         // TODO add your handling code here:
+         MenuPrincipal menupp = new MenuPrincipal();
+         menupp.setVisible(true);
     }//GEN-LAST:event_beginActionPerformed
 
     /**
@@ -88,7 +95,7 @@ public class Home extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
