@@ -9,7 +9,7 @@ package vue;
  *
  * @author manuelpellequer
  */
-public class MenuPrincipal extends javax.swing.JPanel {
+public class MenuPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuPrincipal
@@ -27,19 +27,23 @@ public class MenuPrincipal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        container = new javax.swing.JPanel();
         recherche = new javax.swing.JPanel();
-        Btnrsh = new javax.swing.JButton();
-        modif = new javax.swing.JPanel();
+        btnrecherche = new javax.swing.JButton();
+        modification = new javax.swing.JPanel();
         btnmodif = new javax.swing.JButton();
-        reporting = new javax.swing.JPanel();
-        Btnreport = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        btnreport = new javax.swing.JButton();
 
-        recherche.setBorder(javax.swing.BorderFactory.createTitledBorder("Module Recherche"));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Btnrsh.setText("Effectuer une recherche");
+        recherche.setBorder(javax.swing.BorderFactory.createTitledBorder("Recherche"));
+
+        btnrecherche.setText("Rechercher dans la db");
+        btnrecherche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrechercheActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout rechercheLayout = new javax.swing.GroupLayout(recherche);
         recherche.setLayout(rechercheLayout);
@@ -47,167 +51,117 @@ public class MenuPrincipal extends javax.swing.JPanel {
             rechercheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rechercheLayout.createSequentialGroup()
                 .addGap(85, 85, 85)
-                .addComponent(Btnrsh)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addComponent(btnrecherche)
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         rechercheLayout.setVerticalGroup(
             rechercheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rechercheLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(Btnrsh)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addGap(72, 72, 72)
+                .addComponent(btnrecherche)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        modif.setBorder(javax.swing.BorderFactory.createTitledBorder("Module Modification"));
+        modification.setBorder(javax.swing.BorderFactory.createTitledBorder("Modification"));
 
-        btnmodif.setText("Modifier des données");
+        btnmodif.setText("Modifier des données de la base de données");
         btnmodif.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmodifActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout modifLayout = new javax.swing.GroupLayout(modif);
-        modif.setLayout(modifLayout);
-        modifLayout.setHorizontalGroup(
-            modifLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, modifLayout.createSequentialGroup()
-                .addContainerGap(97, Short.MAX_VALUE)
+        javax.swing.GroupLayout modificationLayout = new javax.swing.GroupLayout(modification);
+        modification.setLayout(modificationLayout);
+        modificationLayout.setHorizontalGroup(
+            modificationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, modificationLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnmodif)
-                .addGap(85, 85, 85))
+                .addGap(53, 53, 53))
         );
-        modifLayout.setVerticalGroup(
-            modifLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(modifLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
+        modificationLayout.setVerticalGroup(
+            modificationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modificationLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
                 .addComponent(btnmodif)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        reporting.setBorder(javax.swing.BorderFactory.createTitledBorder("Module Reporting"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Reporting"));
 
-        Btnreport.setText("Lancer Dashboard Reporting");
-        Btnreport.addActionListener(new java.awt.event.ActionListener() {
+        btnreport.setText("Lancer reporting");
+        btnreport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnreportActionPerformed(evt);
+                btnreportActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout reportingLayout = new javax.swing.GroupLayout(reporting);
-        reporting.setLayout(reportingLayout);
-        reportingLayout.setHorizontalGroup(
-            reportingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, reportingLayout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
-                .addComponent(Btnreport)
-                .addGap(181, 181, 181))
-        );
-        reportingLayout.setVerticalGroup(
-            reportingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(reportingLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(Btnreport)
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout containerLayout = new javax.swing.GroupLayout(container);
-        container.setLayout(containerLayout);
-        containerLayout.setHorizontalGroup(
-            containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(containerLayout.createSequentialGroup()
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(containerLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(recherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(modif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(containerLayout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(reporting, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        containerLayout.setVerticalGroup(
-            containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(containerLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(modif, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(recherche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
-                .addComponent(reporting, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 294, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addComponent(btnreport)
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 171, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(btnreport)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 47, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(202, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(67, 67, 67)
+                .addComponent(recherche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81)
+                .addComponent(modification, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(241, 241, 241))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(modification, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(recherche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnmodifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmodifActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnmodifActionPerformed
 
-    private void BtnreportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnreportActionPerformed
+    private void btnreportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreportActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnreportActionPerformed
+    }//GEN-LAST:event_btnreportActionPerformed
 
+    private void btnrechercheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrechercheActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnrechercheActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btnreport;
-    private javax.swing.JButton Btnrsh;
     private javax.swing.JButton btnmodif;
-    private javax.swing.JPanel container;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton btnrecherche;
+    private javax.swing.JButton btnreport;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel modif;
+    private javax.swing.JPanel modification;
     private javax.swing.JPanel recherche;
-    private javax.swing.JPanel reporting;
     // End of variables declaration//GEN-END:variables
 }

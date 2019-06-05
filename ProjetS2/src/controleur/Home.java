@@ -29,16 +29,16 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        begin = new javax.swing.JButton();
+        btnbegin = new javax.swing.JButton();
         auteurs = new javax.swing.JLabel();
         Titre = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        begin.setText("Commencer");
-        begin.addActionListener(new java.awt.event.ActionListener() {
+        btnbegin.setText("Commencer");
+        btnbegin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                beginActionPerformed(evt);
+                btnbeginActionPerformed(evt);
             }
         });
 
@@ -61,7 +61,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(0, 174, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(begin)
+                .addComponent(btnbegin)
                 .addGap(346, 346, 346))
         );
         layout.setVerticalGroup(
@@ -72,7 +72,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(64, 64, 64)
                 .addComponent(auteurs)
                 .addGap(55, 55, 55)
-                .addComponent(begin)
+                .addComponent(btnbegin)
                 .addContainerGap(88, Short.MAX_VALUE))
         );
 
@@ -82,11 +82,12 @@ public class Home extends javax.swing.JFrame {
     /**
     * méthode pour afficher la fenetre dans le bouton
     */
-    private void beginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginActionPerformed
+    private void btnbeginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbeginActionPerformed
         // TODO add your handling code here:
-         MenuPrincipal menupp = new MenuPrincipal();
-         menupp.setVisible(true);
-    }//GEN-LAST:event_beginActionPerformed
+        java.awt.EventQueue.invokeLater(() -> {
+            new MenuPrincipal().setVisible(true);
+        });
+    }//GEN-LAST:event_btnbeginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,16 +120,14 @@ public class Home extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Home().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Home().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Titre;
     private javax.swing.JLabel auteurs;
-    private javax.swing.JButton begin;
+    private javax.swing.JButton btnbegin;
     // End of variables declaration//GEN-END:variables
 }
