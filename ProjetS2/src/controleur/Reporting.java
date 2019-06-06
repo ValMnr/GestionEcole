@@ -77,10 +77,24 @@ public class Reporting {
   /**
    *
    * récuperation de la liste des notes avec en paramètres un enseignement
-     * @return 
+     * @return
    */
   public ArrayList<Double> getNoteEnseignement(){
       ArrayList<Double> listeNote = null;
+
+       try{
+
+          Connexion connex = this.getConnex();
+          result = connex.remplirChampsRequete("SELECT * From anneescolaire where id="+id);
+
+          String annscol = result.get(0);
+          ann= new AnneeScolaire(Integer.parseInt(annscol));
+
+
+       }catch (Exception e) {
+        e.printStackTrace();
+      }
+
     return listeNote;
   }
 
