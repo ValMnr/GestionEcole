@@ -58,24 +58,6 @@ import vue.Menu;
                     System.out.println("Reporting");
                     // create a dataset...
                     Reporting R = new Reporting(anneescolaireDAO,trimestreDao);
-                    DefaultPieDataset dataset = new DefaultPieDataset();
-                    dataset.setValue("Category 1", 43.2);
-                    dataset.setValue("Category 2", 27.9);
-                    dataset.setValue("Category 3", 79.5);
-                    // create a chart...
-                    JFreeChart chart = ChartFactory.createPieChart(
-                    "Sample Pie Chart",
-                    dataset,
-                    true, // legend?
-                    true, // tooltips?
-                    false // URLs?
-                    );
-                    // create and display a frame...
-                    ChartFrame frame = new ChartFrame("First", chart);
-                    frame.pack();
-                    frame.setVisible(true);
-
-                    // TODO : tester la creation d'objets avec les data sets depuis le main
                     menu.afficher();
                     break;
 

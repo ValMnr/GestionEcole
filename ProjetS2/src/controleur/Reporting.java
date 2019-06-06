@@ -10,6 +10,9 @@ import controleur.DAO.TrimestreDAO;
 import java.util.List;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 
 /**
@@ -44,14 +47,31 @@ public class Reporting {
     }
 
     tier.forEach((Integer i) -> {
-        System.out.println("VALEUR DE TIER : " + i);
         data.add((i* 1.0/sommeAnnee)*100);
       });
-    data.forEach((i) -> {
-        System.out.println("VALEUR DE DATA : " + i);
-      });
+    int j = 2015;
+    for (Double d : data) {
+      // ajout au dataset du pie chart
+      System.out.println("KEY : " + String.valueOf(j) + " VALUES : "+d);
+      datasetPieChart.setValue(String.valueOf(j), d);
+      j++;
 
-      
+    }
+
+    // affichage du pie chart après construction
+    // create a chart...
+    JFreeChart chart = ChartFactory.createPieChart(
+    "Sample Pie Chart",
+    datasetPieChart,
+    true, // legend?
+    true, // tooltips?
+    false // URLs?
+    );
+    // create and display a frame...
+    ChartFrame frame = new ChartFrame("First", chart);
+    frame.pack();
+    frame.setVisible(true);
+
 
   }
 }
