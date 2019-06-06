@@ -74,7 +74,15 @@ public class Reporting {
 
 
   }
-  public ArrayList<Double> getNoteEnseignement()
+  /**
+   *
+   * récuperation de la liste des notes avec en paramètres un enseignement
+     * @return 
+   */
+  public ArrayList<Double> getNoteEnseignement(){
+      ArrayList<Double> listeNote = null;
+    return listeNote;
+  }
 
 
 }
