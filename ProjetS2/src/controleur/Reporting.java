@@ -74,4 +74,7 @@ public class Reporting {
 
 
   }
+  public ArrayList<Double> getNoteEnseignement()
+
+
 }
