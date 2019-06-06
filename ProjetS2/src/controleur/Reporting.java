@@ -8,7 +8,7 @@ package controleur;
 import controleur.DAO.AnneeScolaireDAO;
 import controleur.DAO.EnseignementDAO;
 import controleur.DAO.TrimestreDAO;
-import java.util.List;
+import java.util.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import org.jfree.chart.ChartFactory;
@@ -33,6 +33,7 @@ public class Reporting {
    * Méthode de construction du dataset piechart : proportion d'un caractère sur la population
      * @param AnnD
      * @param TriD
+     * @param EnsD
      * @throws java.sql.SQLException
    */
   public Reporting (AnneeScolaireDAO AnnD,TrimestreDAO TriD, EnseignementDAO EnsD) throws SQLException{
@@ -84,7 +85,9 @@ public class Reporting {
     }
 
     double mean = Moyenne(listeNote);
+    double med = Mediane(listeNote);
     System.out.println("Moyenne matière 18 : "+ mean);
+    System.out.println("Mediane matière 18 : "+ med);
 
   } // fin du constructeur par défaut
   /**
@@ -98,6 +101,20 @@ public class Reporting {
     }
     double moyenne = total * 1.0 / listeNote.size();
     return moyenne;
+  }
+
+  public double Mediane(ArrayList<Integer> listeNote){
+    Collections.sort(listeNote);
+    double median =0.0;
+    if (listeNote.size() % 2 == 0){
+      // double centre = listeNote.get(listeNote.size()/2);
+      median = (listeNote.get(listeNote.size()/2) + listeNote.get(listeNote.size()/2 - 1))/2;
+
+    } else {
+      System.out.println("impair");
+      median = listeNote.get(listeNote.size()/2);
+    }
+    return median;
   }
 
 }
