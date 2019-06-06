@@ -9,6 +9,7 @@ public class Evaluation{
     private int note=0;
     private String appreciation="";
     
+    
     public Evaluation(){}
     
     public Evaluation(int id, int bulid, int note, String app){
@@ -42,6 +43,15 @@ public class Evaluation{
     }
     public void setAppreciation(String app){
         this.appreciation=app;
+    }
+    
+    
+    public List<Evaluation>(Enseignement ens){
+        
+    }
+     
+    public List<Evaluation>(Classe cla){
+        
     }
   
     

@@ -18,7 +18,39 @@ import static java.util.stream.IntStream.range;
                 Connexion connex = new Connexion(namedb,login,password);
                 
                 
-                    /* TEST EVALUATION*/
+                   
+                   /* TEST Niveau       */
+                PersonneDAO ensDao= new PersonneDAO(connex);
+                Personne test = new Personne(36,"test","Icule",2);
+               // ensDao.create(test);
+                test.setNom("ttttt");
+                ensDao.update(test);
+                System.out.println(ensDao.find(test.getId()).getNom());
+                ensDao.delete(test);
+            
+                
+                
+                   /* TEST Niveau 
+                NiveauDAO ensDao= new NiveauDAO(connex);
+                Niveau test = new Niveau(6,"test");
+                ensDao.create(test);
+                test.setNom("ttttt");
+                ensDao.update(test);
+                System.out.println(ensDao.find(test.getId()).getNom());
+                ensDao.delete(test);
+                 */
+                
+                   /* TEST INSCRIPTION 
+                InscriptionDAO ensDao= new InscriptionDAO(connex);
+                Inscription test = new Inscription(22,4,4);
+                //ensDao.create(test);
+                test.setClasseId(3);
+                ensDao.update(test);
+                System.out.println(ensDao.find(test.getId()).getClasseId());
+                ensDao.delete(test);
+                */
+                
+                    /* TEST EVALUATION
                 
                 EvaluationDAO ensDao= new EvaluationDAO(connex);
                 Evaluation test = new Evaluation(200,4,4,"Test");
@@ -28,7 +60,7 @@ import static java.util.stream.IntStream.range;
                 System.out.println(ensDao.find(test.getId()).getAppreciation());
                 ensDao.delete(test);
                 
-                
+                */
                 
                 
                 

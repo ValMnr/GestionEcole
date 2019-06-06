@@ -1,3 +1,4 @@
+package modele;
 /**
 	*Classe du Niveau
 	*/
@@ -10,6 +11,8 @@ public class Niveau{
 		this.id=id;
 		this.nom=nom;
 	}
+
+    public Niveau(){}
 
 	public void setId(int id){
 		this.id=id;
