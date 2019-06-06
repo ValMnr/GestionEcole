@@ -34,7 +34,9 @@ public class Reporting {
      * @param TriD
      * @throws java.sql.SQLException
    */
-  public Reporting (AnneeScolaireDAO AnnD,TrimestreDAO TriD) throws SQLException{
+  public Reporting (AnneeScolaireDAO AnnD,TrimestreDAO TriD, EnseignementDAO EnsD) throws SQLException{
+
+
     int sommeAnnee = AnnD.getSize();
     int sommeTri = TriD.getSize();
 
@@ -72,31 +74,17 @@ public class Reporting {
     frame.pack();
     frame.setVisible(true);
 
+    ArrayList<Integer> listeNote = EnsD.getNoteEnseignement(18);
 
-  }
-  /**
-   *
-   * récuperation de la liste des notes avec en paramètres un enseignement
-     * @return
-   */
-  // public ArrayList<Double> getNoteEnseignement(){
-  //     ArrayList<Double> listeNote = null;
-  //
-  //      try{
-  //
-  //         Connexion connex = this.getConnex();
-  //         result = connex.remplirChampsRequete("SELECT * From anneescolaire where id="+id);
-  //
-  //         String annscol = result.get(0);
-  //         ann= new AnneeScolaire(Integer.parseInt(annscol));
-  //
-  //
-  //      }catch (Exception e) {
-  //       e.printStackTrace();
-  //     }
-  //
-  //   return listeNote;
-  // }
+
+    // récupération des notes fonctionnelle
+    for (Integer i : listeNote) {
+      System.out.println("Note : "+i);
+    }
+
+
+  } // fin du constructeur par défaut
+
 
 
 }

@@ -3,6 +3,7 @@ package controleur;
 import controleur.DAO.AnneeScolaireDAO;
 import controleur.DAO.TrimestreDAO;
 import controleur.DAO.DAO;
+import controleur.DAO.EnseignementDAO;
 import java.sql.SQLException;
 import java.util.Scanner;
 import modele.*;
@@ -22,10 +23,9 @@ import vue.Menu;
                 String password="tiger";
 
                 Connexion connex1 = new Connexion(namedb,login,password);
-                // DAO<Trimestre> trimestreDao = new TrimestreDAO(connex1);
                 TrimestreDAO trimestreDao = new TrimestreDAO(connex1);
-                // DAO<AnneeScolaire> anneescolaireDAO = new AnneeScolaireDAO(connex1);
                 AnneeScolaireDAO anneescolaireDAO = new AnneeScolaireDAO(connex1);
+                EnseignementDAO enseignementDAO = new EnseignementDAO(connex1);
                 //ArrayList<String> liste = connex1.remplirChampsRequete("SELECT * From trimestre");
                 //System.out.println(liste);
                 Menu menu = new Menu();
@@ -57,7 +57,7 @@ import vue.Menu;
                     case "3" :
                     System.out.println("Reporting");
                     // create a dataset...
-                    Reporting R = new Reporting(anneescolaireDAO,trimestreDao);
+                    Reporting R = new Reporting(anneescolaireDAO,trimestreDao,enseignementDAO);
                     menu.afficher();
                     break;
 
