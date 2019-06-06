@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package controleur.DAO;
 
 import modele.*;
-import DAO.*;
 import java.sql.*;
 import java.util.*;
 import java.util.logging.Level;
@@ -22,6 +21,7 @@ public class DetailBulletinDAO extends DAO<DetailBulletin>{
         super(conn);
     }
     
+    @Override
     public int getSize() throws SQLException{
     ArrayList<String> liste = new ArrayList<>();
     liste= connect.remplirChampsRequete("SELECT COUNT(*) FROM detailbulletin");
@@ -29,6 +29,7 @@ public class DetailBulletinDAO extends DAO<DetailBulletin>{
     return size;
     }
     
+    @Override
     public boolean create(DetailBulletin obj) {
     Connexion connex = this.getConnex();
     String values = obj.getId()+",'"+obj.getBulletinId()+"',"+obj.getEnseignementId()+",'"+obj.getAppreciation()+"'";
@@ -47,6 +48,7 @@ public class DetailBulletinDAO extends DAO<DetailBulletin>{
 
   
 
+    @Override
     public boolean delete(DetailBulletin obj) {
       
     int id_del=obj.getId();
@@ -60,6 +62,7 @@ public class DetailBulletinDAO extends DAO<DetailBulletin>{
        return false;
   }
     
+    @Override
     public boolean update(DetailBulletin obj) {      
       
     Connexion connex = this.getConnex();
@@ -77,6 +80,7 @@ public class DetailBulletinDAO extends DAO<DetailBulletin>{
        return false;  
   }
    
+    @Override
   public DetailBulletin find(int id) {
       
     DetailBulletin ann= new DetailBulletin();

@@ -8,21 +8,21 @@ public class Evaluation{
     private int detailbulletinid=0;
     private int note=0;
     private String appreciation="";
-    
-    
+
+
     public Evaluation(){}
-    
+
     public Evaluation(int id, int bulid, int note, String app){
         this.id=id;
         this.detailbulletinid=bulid;
         this.note=note;
         this.appreciation=app;
     }
-    
+
 
     public int getId(){
 		return this.id;
-    }   
+    }
     public void setId(int id){
             this.id=id;
     }
@@ -44,16 +44,16 @@ public class Evaluation{
     public void setAppreciation(String app){
         this.appreciation=app;
     }
-    
-    
-    public List<Evaluation>(Enseignement ens){
-        
-    }
-     
-    public List<Evaluation>(Classe cla){
-        
-    }
-  
-    
-	
+
+
+    // public List<Evaluation>(Enseignement ens){
+    //
+    // }
+    //
+    // public List<Evaluation>(Classe cla){
+    //
+    // }
+
+
+
 }

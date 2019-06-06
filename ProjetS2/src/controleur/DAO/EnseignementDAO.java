@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package controleur.DAO;
 
 
 import java.sql.SQLException;
 import java.util.*;
 import modele.*;
-import DAO.*;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,6 +23,7 @@ public class EnseignementDAO extends DAO<Enseignement> {
         super(conn);
 
     }
+      @Override
     public int getSize() throws SQLException{
         ArrayList<String> liste = new ArrayList<>();
         liste= connect.remplirChampsRequete("SELECT COUNT(*) FROM enseignement");
@@ -31,6 +32,7 @@ public class EnseignementDAO extends DAO<Enseignement> {
 
     }
 
+      @Override
   public boolean create(Enseignement obj) {
        Connexion connex = this.getConnex();
     String values = obj.getId()+","+obj.getClasseId()+","+obj.getDisciplineId()+","+obj.getPersonneId();
@@ -46,10 +48,11 @@ public class EnseignementDAO extends DAO<Enseignement> {
        return false;
   }
 
+      @Override
   public boolean delete(Enseignement obj) {
     Connexion connex = this.getConnex();
         try {
-            connex.executeUpdate("DELETE FROM enseignement where id="+obj.getId();
+            connex.executeUpdate("DELETE FROM enseignement where id="+obj.getId());
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(ClasseDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -57,6 +60,7 @@ public class EnseignementDAO extends DAO<Enseignement> {
        return false;
   }
 
+      @Override
   public boolean update(Enseignement obj) {
 
 
@@ -75,6 +79,7 @@ public class EnseignementDAO extends DAO<Enseignement> {
        return false;
   }
 
+      @Override
   public Enseignement find(int id) {
 
     Enseignement enseign= new Enseignement();

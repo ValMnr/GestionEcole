@@ -36,7 +36,7 @@ public class Personne{
     public int getType(){
         return this.type;
     }
-    public int setType(int typ){
+    public void setType(int typ){
         this.type=typ;
     }
 }
