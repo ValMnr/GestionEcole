@@ -6,6 +6,7 @@
 package controleur;
 
 import controleur.DAO.AnneeScolaireDAO;
+import controleur.DAO.EnseignementDAO;
 import controleur.DAO.TrimestreDAO;
 import java.util.List;
 import java.sql.SQLException;
@@ -82,9 +83,21 @@ public class Reporting {
       System.out.println("Note : "+i);
     }
 
+    double mean = Moyenne(listeNote);
+    System.out.println("Moyenne matière 18 : "+ mean);
 
   } // fin du constructeur par défaut
-
-
+  /**
+  * Méthode de calcul de la moyenne
+  *
+  */
+  public double Moyenne(ArrayList<Integer> listeNote){
+    int total = 0;
+    for (Integer i : listeNote ) {
+      total+= i;
+    }
+    double moyenne = total * 1.0 / listeNote.size();
+    return moyenne;
+  }
 
 }
