@@ -1,8 +1,6 @@
 package controleur;
 
-import controleur.DAO.AnneeScolaireDAO;
-import controleur.DAO.TrimestreDAO;
-import controleur.DAO.DAO;
+import controleur.DAO.*;
 import java.sql.SQLException;
 import java.util.Scanner;
 import modele.*;
@@ -10,7 +8,7 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
-import vue.Menu;
+import vue.*;
 
 
  public class TestEcole{
@@ -19,9 +17,22 @@ import vue.Menu;
 
                 String namedb="ecole";
                 String login="root";
-                String password="tiger";
+                String password="";
 
                 Connexion connex1 = new Connexion(namedb,login,password);
+                AccessCo co = new AccessCo(connex1);            
+                
+                
+                DAO<Bulletin> bulDAO = new BulletinDAO(connex1);
+                Bulletin tst = bulDAO.find(4);
+                
+                Modification mod = new Modification(tst);
+                
+                
+                
+                
+                
+                /*
                 // DAO<Trimestre> trimestreDao = new TrimestreDAO(connex1);
                 TrimestreDAO trimestreDao = new TrimestreDAO(connex1);
                 // DAO<AnneeScolaire> anneescolaireDAO = new AnneeScolaireDAO(connex1);
@@ -67,5 +78,6 @@ import vue.Menu;
                 } while (!choice.equals("q")); // end of loop
                 // if end of the while loop
                 System.exit(0);
+*/
  	 } // end of the main
  } // end of the class

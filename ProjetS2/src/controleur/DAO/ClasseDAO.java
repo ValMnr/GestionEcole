@@ -67,15 +67,10 @@ public class ClasseDAO extends DAO<Classe>{
 
      @Override
   public boolean update(Classe obj) {
-
-
-
     Connexion connex = this.getConnex();
     String values = "id="+obj.getId()+",nom='"+obj.getNom()+"',ecoleId="+obj.getEcoleId()+",niveauId="+obj.getNiveauId()+",anneescolaireId="+obj.getAnneeScolaireId();
     String req="UPDATE classe SET "+values+" WHERE id="+obj.getId();
-    System.out.println(req);
-
-       try {
+      try {
             connex.executeUpdate(req);
             return true;
         } catch (SQLException ex) {

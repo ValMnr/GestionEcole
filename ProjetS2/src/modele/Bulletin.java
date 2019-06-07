@@ -16,9 +16,7 @@ public class Bulletin{
         this.appreciation=appreciation;
     }
 
-    public Bulletin(int parseInt, int parseInt0, String part, String part0, int parseInt1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ 
 
     public int getId(){
         return this.id;
