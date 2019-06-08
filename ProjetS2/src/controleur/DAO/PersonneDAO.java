@@ -56,6 +56,16 @@ public class PersonneDAO extends DAO<Personne> {
        return false;
   }
    
+    public boolean delete_by_id(int id) {
+    Connexion connex = this.getConnex();
+        try {         
+            connex.executeUpdate("DELETE FROM personne where id="+id);
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ClasseDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       return false;
+  }
   public boolean update(Personne obj) {
       
       
@@ -85,11 +95,11 @@ public class PersonneDAO extends DAO<Personne> {
          
         ArrayList<String> result = connex.remplirChampsRequete("SELECT * From personne where id="+id);         
         String[] res= result.get(0).split(",");
-        ann= new Personne( Integer.parseInt(res[0]) , res[1], res[2],Integer.parseInt(res[0]));
+        ann= new Personne( Integer.parseInt(res[0]) , res[1], res[2],Integer.parseInt(res[3]));
         
          
      }catch (Exception e) {
-      e.printStackTrace();
+      //e.printStackTrace();
     }
      
     //return ann;

@@ -21,8 +21,12 @@ public class Modification {
         System.out.println("Lancement modif bulletin");
         ModifBulletin newview = new ModifBulletin(obj);
         newview.setVisible(true);
-    
     }
     
+        public Modification(Evaluation obj){
+        System.out.println("Lancement modif evaluation");
+        ModifEvaluation newview = new ModifEvaluation(obj);
+        newview.setVisible(true);
+    }
     
 }

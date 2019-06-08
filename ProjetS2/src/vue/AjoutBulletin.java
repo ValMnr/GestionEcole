@@ -5,15 +5,13 @@
  */
 package vue;
 
-import controleur.DAO.DAO;
-import controleur.DAO.EvaluationDAO;
+import controleur.DAO.*;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modele.*;
 import controleur.*;
-import controleur.DAO.BulletinDAO;
 
 
 /**
@@ -51,7 +49,7 @@ public class AjoutBulletin extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,7 +62,30 @@ public class AjoutBulletin extends javax.swing.JFrame {
 
         jLabel4.setText("Appreciation :");
 
-        jButton1.setText("Ajouter");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Ajouter");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,8 +108,8 @@ public class AjoutBulletin extends javax.swing.JFrame {
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(103, 103, 103)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -108,13 +129,50 @@ public class AjoutBulletin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    
+        try {
+            
+            if(jTextField3.getText().equals("") || jTextField1.getText().equals("")|| jTextField2.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Remplir tous les champs SVP");
+               
+            }
+            else{
+                DAO<Bulletin> perDao = new BulletinDAO(AccessCo.con);
+                this.getBulletin().setId(perDao.getSize()+1);
+                this.getBulletin().setAppreciation(jTextField2.getText());
+                this.getBulletin().setTrimestreId(Integer.parseInt(jTextField1.getText()));
+                this.getBulletin().setInscriptionId(Integer.parseInt(jTextField3.getText()));
+                perDao.create(this.getBulletin());
+                JOptionPane.showMessageDialog(null, "Le bulletin a été ajouté");
+            }
+            
+        
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AjoutEleve.class.getName()).log(Level.SEVERE, null, ex);
+      }
+            }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,7 +182,10 @@ public class AjoutBulletin extends javax.swing.JFrame {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+        */
+        
+        
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -145,36 +206,10 @@ public class AjoutBulletin extends javax.swing.JFrame {
 
     }
     
-     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-            try {
-            
-            if(jTextField3.getText().equals("") || jTextField1.getText().equals("")|| jTextField2.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Remplir tous les champs SVP");
-               
-            }
-            else{
-                DAO<Bulletin> perDao = new BulletinDAO(AccessCo.con);
-                this.getBulletin().setId(perDao.getSize()+1);
-                this.getBulletin().setTrimestreId(Integer.parseInt(jTextField1.getText()));
-                this.getBulletin().setInscriptionId(Integer.parseInt(jTextField3.getText()));
-                this.getBulletin().setAppreciation(jTextField2.getText());
-                perDao.create(this.getBulletin());
-                JOptionPane.showMessageDialog(null, "Le bulletin a été ajouté");
-            }
-            
-        
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(AjoutEleve.class.getName()).log(Level.SEVERE, null, ex);
-      }
-        
-
-
-
-    }        
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

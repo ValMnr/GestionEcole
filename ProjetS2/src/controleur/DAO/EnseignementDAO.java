@@ -90,7 +90,7 @@ public class EnseignementDAO extends DAO<Enseignement> {
 
         Connexion connex = this.getConnex();
 
-        result = connex.remplirChampsRequete("SELECT * From enseignement where id="+id);
+        result = connex.remplirChampsRequete("SELECT * From enseignement where id="+id );
         String[] res= result.get(0).split(",");
         enseign= new Enseignement( Integer.parseInt(res[0]) , Integer.parseInt(res[1]),Integer.parseInt(res[2]),Integer.parseInt(res[3]));
 
