@@ -2,42 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-<<<<<<< Release
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/modele/Personne.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/modele/Evaluation.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/Home.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/modele/DetailBulletin.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/TestEcole.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/EnseignementDAO.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/Reporting.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/ClasseDAO.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/DetailBulletinDAO.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/DisciplineDAO.java</file>
-=======
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/Home.java</file>
-=======
-<<<<<<< HEAD
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/Home.java</file>
-=======
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/AnneeScolaireDAO.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/Reporting.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/TestEcole.java</file>
->>>>>>> Reporting
->>>>>>> master
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/Dashboard.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/TestEcole.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/BulletinDAO.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/modele/AnneeScolaire.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/Menu.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/SSHTunnel.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/Connexion.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/AnneeScolaireDAO.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/TrimestreDAO.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/modele/Trimestre.java</file>
-            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/MenuPrincipal.java</file>
->>>>>>> 2/2
-        </group>
+        <group/>
     </open-files>
 </project-private>

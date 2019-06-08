@@ -8,6 +8,7 @@ package controleur;
 import controleur.DAO.AnneeScolaireDAO;
 import controleur.DAO.EnseignementDAO;
 import controleur.DAO.TrimestreDAO;
+import java.awt.BorderLayout;
 import java.util.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
+import vue.Dashboard;
 
 /**
  *
@@ -26,7 +28,6 @@ import org.jfree.data.general.DefaultPieDataset;
  */
 
 public class Reporting {
-  DefaultPieDataset datasetPieChart = new DefaultPieDataset();
   /**
    *
    * Utilisation des connexions ouvertes sur trimestre et annee
@@ -38,12 +39,15 @@ public class Reporting {
    */
   public Reporting (AnneeScolaireDAO AnnD,TrimestreDAO TriD, EnseignementDAO EnsD) throws SQLException{
 
+    DefaultPieDataset datasetPieChart = new DefaultPieDataset();
 
     int sommeAnnee = AnnD.getSize();
     int sommeTri = TriD.getSize();
 
     List<Integer> tier = new ArrayList<Integer>();
     ArrayList<Double> data = new ArrayList<Double>();
+
+    // Requete pour années + Pie Chart
 
     for (int i= 2015 ; i<2015+sommeAnnee ; i++) {
       // recherche des années et ajout à la liste
@@ -59,22 +63,9 @@ public class Reporting {
       System.out.println("KEY : " + String.valueOf(j) + " VALUES : "+d);
       datasetPieChart.setValue(String.valueOf(j), d);
       j++;
-
     }
 
-    // affichage du pie chart après construction
-    // create a chart...
-    JFreeChart chart = ChartFactory.createPieChart(
-    "Sample Pie Chart",
-    datasetPieChart,
-    true, // legend?
-    true, // tooltips?
-    false // URLs?
-    );
-    // create and display a frame...
-    ChartFrame frame = new ChartFrame("First", chart);
-    frame.pack();
-    frame.setVisible(true);
+    // Génération de moyenne + médiane
 
     ArrayList<Integer> listeNote = EnsD.getNoteEnseignement(18);
 
@@ -89,7 +80,12 @@ public class Reporting {
     System.out.println("Moyenne matière 18 : "+ mean);
     System.out.println("Mediane matière 18 : "+ med);
 
+    Vuegraphique(datasetPieChart);
+
+
   } // fin du constructeur par défaut
+
+
   /**
   * Méthode de calcul de la moyenne
   *
@@ -111,10 +107,37 @@ public class Reporting {
       median = (listeNote.get(listeNote.size()/2) + listeNote.get(listeNote.size()/2 - 1))/2;
 
     } else {
-      System.out.println("impair");
       median = listeNote.get(listeNote.size()/2);
     }
     return median;
   }
 
+  public void Vuegraphique(DefaultPieDataset datasetPieChart){
+
+    // ajouter le pie chart au dashboard
+    // affichage du pie chart après construction
+    // create a chart...
+    JFreeChart chart = ChartFactory.createPieChart(
+    "Sample Pie Chart",
+    datasetPieChart,
+    true, // legend?
+    true, // tooltips?
+    false // URLs?
+    );
+    // create and display a frame...
+    ChartFrame Pieframe = new ChartFrame("Année", chart);
+    Dashboard dash = new Dashboard();
+
+
+
+    // dash.getContentPane().add(Pieframe,BorderLayout.LINE_START);
+    // ajout au centre le bar chart
+    // dash.container.add(button, BorderLayout.CENTER);
+    // ajout à droite du line chart
+    // dash.container.add(button, BorderLayout.LINE_END);
+
+
+
+    dash.setVisible(true);
+  }
 }
