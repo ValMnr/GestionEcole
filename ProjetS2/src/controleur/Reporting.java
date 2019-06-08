@@ -37,14 +37,10 @@ public class Reporting {
    */
   public Reporting (AccessCo co) throws SQLException{
     // dao
-    TrimestreDAO TriD = new TrimestreDAO(co.getCon());
-    AnneeScolaireDAO AnnD = new AnneeScolaireDAO(co.getCon());
-    EnseignementDAO EnsD = new EnseignementDAO(co.getCon());
-
     DefaultPieDataset datasetPieChart = new DefaultPieDataset();
 
-    int sommeAnnee = AnnD.getSize();
-    int sommeTri = TriD.getSize();
+    int sommeAnnee = AccessCo.AnneeScolaireDAO.getSize();
+    int sommeTri = AccessCo.TrimestreDAO.getSize();
 
     List<Integer> tier = new ArrayList<Integer>();
     ArrayList<Double> data = new ArrayList<Double>();
@@ -53,7 +49,7 @@ public class Reporting {
 
     for (int i= 2015 ; i<2015+sommeAnnee ; i++) {
       // recherche des années et ajout à la liste
-      tier.add(AnnD.getResult(i));
+      tier.add(AccessCo.AnneeScolaireDAO.getResult(i));
     }
 
     tier.forEach((Integer i) -> {
@@ -69,7 +65,7 @@ public class Reporting {
 
     // Génération de moyenne + médiane
 
-    ArrayList<Integer> listeNote = EnsD.getNoteEnseignement(18);
+    ArrayList<Integer> listeNote = AccessCo.DisciplineDAO.getNoteDiscipline(2);
 
 
     // récupération des notes fonctionnelle
@@ -79,8 +75,8 @@ public class Reporting {
 
     double mean = Moyenne(listeNote);
     double med = Mediane(listeNote);
-    System.out.println("Moyenne matière 18 : "+ mean);
-    System.out.println("Mediane matière 18 : "+ med);
+    System.out.println("Moyenne matière 2 : "+ mean);
+    System.out.println("Mediane matière 2 : "+ med);
 
     Vuegraphique(datasetPieChart);
 

@@ -20,34 +20,32 @@ import vue.*;
                 String password="tiger";
 
                 Connexion connex1 = new Connexion(namedb,login,password);
-                AccessCo co = new AccessCo(connex1);            
-                
-                
-                DAO<Evaluation> bulDAO = new EvaluationDAO(connex1);
+                AccessCo co = new AccessCo(connex1);
+
                 //Bulletin tst = bulDAO.find(4);
                 //Bulletin tst = new Bulletin();
                 //Evaluation tst = bulDAO.find(2);
                 //Ajout mod = new Ajout(tst);
-                
-                
+
+
                 //Modification mod = new Modification(tst);
-                
-                AIO viewaio = new AIO();
-                
-                
-                
-                
-                
-                AccessCo co = new AccessCo(connex1);
+
+                 // AIO viewaio = new AIO();
 
 
-                DAO<Bulletin> bulDAO = new BulletinDAO(connex1);
-                Bulletin tst = bulDAO.find(4);
-
-                Modification mod = new Modification(tst);
 
 
-*/
+
+                // AccessCo co = new AccessCo(connex1);
+
+
+                // DAO<Bulletin> bulDAO = new BulletinDAO(connex1);
+                // Bulletin tst = bulDAO.find(4);
+
+                // Modification mod = new Modification(tst);
+
+
+                
 
 
 

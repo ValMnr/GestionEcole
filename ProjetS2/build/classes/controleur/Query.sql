@@ -13,5 +13,11 @@ WHERE EXISTS (
   FROM detailbulletin WHERE detailbulletinId = 18
 );
 
+SELECT note FROM evaluation
+    INNER JOIN detailbulletin ON detailbulletinId = detailbulletin.id
+    INNER JOIN enseignement ON EnseignementId = enseignement.id
+    INNER JOIN discipline ON disciplineId = 1 ;
+
+
 -- ID = enseignement.getID(); : pour récupérer la valeur de l'id de
 -- simplifier aussi la réqueter sql et ne faire qu'une seule jointure
