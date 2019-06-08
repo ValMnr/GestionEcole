@@ -1,9 +1,6 @@
 package controleur;
 
-import controleur.DAO.AnneeScolaireDAO;
-import controleur.DAO.TrimestreDAO;
-import controleur.DAO.DAO;
-import controleur.DAO.EnseignementDAO;
+import controleur.DAO.*;
 import java.sql.SQLException;
 import java.util.Scanner;
 import modele.*;
@@ -11,7 +8,7 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
-import vue.Menu;
+import vue.*;
 
 
  public class TestEcole{
@@ -23,6 +20,20 @@ import vue.Menu;
                 String password="tiger";
 
                 Connexion connex1 = new Connexion(namedb,login,password);
+                AccessCo co = new AccessCo(connex1);            
+                
+                
+                DAO<Bulletin> bulDAO = new BulletinDAO(connex1);
+                Bulletin tst = bulDAO.find(4);
+                
+                Modification mod = new Modification(tst);
+                
+                
+                
+                
+                
+                
+                // DAO<Trimestre> trimestreDao = new TrimestreDAO(connex1);
                 TrimestreDAO trimestreDao = new TrimestreDAO(connex1);
                 AnneeScolaireDAO anneescolaireDAO = new AnneeScolaireDAO(connex1);
                 EnseignementDAO enseignementDAO = new EnseignementDAO(connex1);
