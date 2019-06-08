@@ -5,8 +5,10 @@
  */
 package vue;
 
+import java.awt.BorderLayout;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 /**
@@ -35,7 +37,11 @@ public class PieChart {
     frame.setVisible(true);
   }
 
-  public PieChart(DefaultPieDataset dataset) {
+  /**
+  *
+  * constructeur par surcharge : ajout au dashboard + création de la vue
+  */
+  public PieChart(Dashboard dash, DefaultPieDataset dataset) {
     JFreeChart chart = ChartFactory.createPieChart(
     "Sample Pie Chart",
     dataset,
@@ -44,8 +50,12 @@ public class PieChart {
     false // URLs?
     );
     // create and display a frame...
-    ChartFrame frame = new ChartFrame("First", chart);
-    frame.pack();
-    frame.setVisible(true);
+    // try to create a jpanel
+    ChartPanel PiePanel = new ChartPanel(chart);
+
+    // add to the dashboard
+    
+    dash.add(PiePanel,BorderLayout.LINE_START);
   }
+
 }

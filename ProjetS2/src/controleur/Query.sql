@@ -9,7 +9,7 @@ WHERE EXISTS (
 SELECT note, detailbulletinId
 FROM evaluation
 WHERE EXISTS (
-  SELECT 1
+  SELECT *
   FROM detailbulletin WHERE detailbulletinId = 18
 );
 

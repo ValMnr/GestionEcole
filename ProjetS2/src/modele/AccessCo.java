@@ -12,7 +12,7 @@ import controleur.DAO.*;
  * @author Valentin
  */
 public class AccessCo {
-    
+
     public static Connexion con;
     public static AnneeScolaireDAO AnneeScolaireDAO;
     public static BulletinDAO BulletinDAO;
@@ -43,6 +43,10 @@ public class AccessCo {
 
     
     }
-    
-   
+
+    public Connexion getCon(){
+      return this.con;
+    }
+
+
 }

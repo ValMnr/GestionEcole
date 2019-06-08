@@ -17,7 +17,7 @@ import vue.*;
 
                 String namedb="ecole";
                 String login="root";
-                String password="";
+                String password="tiger";
 
                 Connexion connex1 = new Connexion(namedb,login,password);
                 AccessCo co = new AccessCo(connex1);            
@@ -37,11 +37,24 @@ import vue.*;
                 
                 
                 
-                /*
+                
+                AccessCo co = new AccessCo(connex1);
+
+
+                DAO<Bulletin> bulDAO = new BulletinDAO(connex1);
+                Bulletin tst = bulDAO.find(4);
+
+                Modification mod = new Modification(tst);
+
+
+*/
+
+
+
                 // DAO<Trimestre> trimestreDao = new TrimestreDAO(connex1);
                 TrimestreDAO trimestreDao = new TrimestreDAO(connex1);
-                // DAO<AnneeScolaire> anneescolaireDAO = new AnneeScolaireDAO(connex1);
                 AnneeScolaireDAO anneescolaireDAO = new AnneeScolaireDAO(connex1);
+                EnseignementDAO enseignementDAO = new EnseignementDAO(connex1);
                 //ArrayList<String> liste = connex1.remplirChampsRequete("SELECT * From trimestre");
                 //System.out.println(liste);
                 Menu menu = new Menu();
@@ -73,7 +86,7 @@ import vue.*;
                     case "3" :
                     System.out.println("Reporting");
                     // create a dataset...
-                    Reporting R = new Reporting(anneescolaireDAO,trimestreDao);
+                    Reporting R = new Reporting(co);
                     menu.afficher();
                     break;
 
@@ -83,6 +96,5 @@ import vue.*;
                 } while (!choice.equals("q")); // end of loop
                 // if end of the while loop
                 System.exit(0);
-*/
  	 } // end of the main
  } // end of the class

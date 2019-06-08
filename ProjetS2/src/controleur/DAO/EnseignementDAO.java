@@ -23,7 +23,6 @@ public class EnseignementDAO extends DAO<Enseignement> {
         super(conn);
 
     }
-      @Override
     public int getSize() throws SQLException{
         ArrayList<String> liste = new ArrayList<>();
         liste= connect.remplirChampsRequete("SELECT COUNT(*) FROM enseignement");
@@ -32,7 +31,6 @@ public class EnseignementDAO extends DAO<Enseignement> {
 
     }
 
-      @Override
   public boolean create(Enseignement obj) {
        Connexion connex = this.getConnex();
     String values = obj.getId()+","+obj.getClasseId()+","+obj.getDisciplineId()+","+obj.getPersonneId();
@@ -102,4 +100,32 @@ public class EnseignementDAO extends DAO<Enseignement> {
     //return enseign;
     return enseign ;
   }
+
+  /**
+   *
+   * récuperation de la liste des notes avec en paramètres un enseignement
+     * @param idMatiere
+     * @return
+   */
+  public ArrayList<Integer> getNoteEnseignement(int idMatiere){
+      ArrayList<Integer> listeNote = new ArrayList<Integer>();
+      ArrayList<String> result = new ArrayList<String>();
+
+       try{
+
+          Connexion connex = this.getConnex();
+          result = connex.remplirChampsRequete("SELECT note FROM evaluation WHERE EXISTS (SELECT 1 FROM detailbulletin WHERE detailbulletinId ="+idMatiere+")");
+
+          for (String s : result) {
+            listeNote.add(Integer.parseInt(s));
+          }
+
+       }catch (NumberFormatException | SQLException e) {
+        System.out.println(e);
+      }
+
+    return listeNote;
+  }
+
+
 }

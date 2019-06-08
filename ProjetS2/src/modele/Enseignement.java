@@ -1,15 +1,18 @@
 package modele;
 
-
+/**
+* Table de correspondance des id d'enseignement et des matières
+* 
+*/
 public class Enseignement{
-    
+
     private int id=0;
     private int classeid=0;
     private int disciplineid=0;
     private int personneid=0;
-    
+
     public Enseignement(){};
-    
+
     public Enseignement(int id, int cid, int did,int pid){
         this.id=id;
         this.classeid=cid;
@@ -17,11 +20,11 @@ public class Enseignement{
         this.personneid=id;
     }
 
-  
-    
+
+
     public int getId(){
 		return this.id;
-    }   
+    }
     public void setId(int id){
             this.id=id;
     }
@@ -43,7 +46,7 @@ public class Enseignement{
     public void setPersonneId(int id){
         this.personneid=id;
     }
-    
+
 
 
 
