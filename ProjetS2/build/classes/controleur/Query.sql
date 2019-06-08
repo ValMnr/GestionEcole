@@ -9,11 +9,7 @@ WHERE EXISTS (
 SELECT note, detailbulletinId
 FROM evaluation
 WHERE EXISTS (
-<<<<<<< HEAD
   SELECT *
-=======
-  SELECT 1
->>>>>>> master
   FROM detailbulletin WHERE detailbulletinId = 18
 );
 

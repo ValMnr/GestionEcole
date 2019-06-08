@@ -20,19 +20,19 @@ import vue.*;
                 String password="tiger";
 
                 Connexion connex1 = new Connexion(namedb,login,password);
-                AccessCo co = new AccessCo(connex1);            
-                
-                
+                AccessCo co = new AccessCo(connex1);
+
+
                 DAO<Bulletin> bulDAO = new BulletinDAO(connex1);
                 Bulletin tst = bulDAO.find(4);
-                
+
                 Modification mod = new Modification(tst);
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
                 // DAO<Trimestre> trimestreDao = new TrimestreDAO(connex1);
                 TrimestreDAO trimestreDao = new TrimestreDAO(connex1);
                 AnneeScolaireDAO anneescolaireDAO = new AnneeScolaireDAO(connex1);
@@ -68,7 +68,7 @@ import vue.*;
                     case "3" :
                     System.out.println("Reporting");
                     // create a dataset...
-                    Reporting R = new Reporting(anneescolaireDAO,trimestreDao,enseignementDAO);
+                    Reporting R = new Reporting(co);
                     menu.afficher();
                     break;
 

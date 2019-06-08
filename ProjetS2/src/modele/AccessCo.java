@@ -10,12 +10,16 @@ package modele;
  * @author Valentin
  */
 public class AccessCo {
-    
+
     public static Connexion con;
 
     public AccessCo(Connexion con){
     this.con=con;
     }
-    
-   
+
+    public Connexion getCon(){
+      return this.con;
+    }
+
+
 }

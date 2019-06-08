@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `bulletin` (
 --
 
 INSERT INTO `bulletin` (`id`, `trimestreId`, `inscriptionId`, `appreciation`) VALUES
-(1, 14, 1, 'Le petit sebastion est un vrai tyran'),
+(1, 14, 1, 'Lorem ipsum lorem ispum lorem ipsum'),
 (2, 3, 2, 'Lorem ipsum lorem ispum lorem ipsum'),
 (3, 13, 3, 'Lorem ipsum lorem ispum lorem ipsum'),
 (4, 2, 4, 'Lorem ipsum lorem ispum lorem ipsum'),

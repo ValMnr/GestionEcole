@@ -5,18 +5,18 @@
  */
 package controleur;
 
-import controleur.DAO.AnneeScolaireDAO;
-import controleur.DAO.EnseignementDAO;
-import controleur.DAO.TrimestreDAO;
+import controleur.DAO.*;
 import java.awt.BorderLayout;
 import java.util.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import modele.AccessCo;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 import vue.Dashboard;
+import vue.PieChart;
 
 /**
  *
@@ -32,12 +32,14 @@ public class Reporting {
    *
    * Utilisation des connexions ouvertes sur trimestre et annee
    * Méthode de construction du dataset piechart : proportion d'un caractère sur la population
-     * @param AnnD
-     * @param TriD
-     * @param EnsD
+     * @param co
      * @throws java.sql.SQLException
    */
-  public Reporting (AnneeScolaireDAO AnnD,TrimestreDAO TriD, EnseignementDAO EnsD) throws SQLException{
+  public Reporting (AccessCo co) throws SQLException{
+    // dao
+    TrimestreDAO TriD = new TrimestreDAO(co.getCon());
+    AnneeScolaireDAO AnnD = new AnneeScolaireDAO(co.getCon());
+    EnseignementDAO EnsD = new EnseignementDAO(co.getCon());
 
     DefaultPieDataset datasetPieChart = new DefaultPieDataset();
 
@@ -82,6 +84,11 @@ public class Reporting {
 
     Vuegraphique(datasetPieChart);
 
+    // TODO : create 6 arraylist and générer la moyenne et la médiane pour chaque matière
+    // TODO : evaluer le lien entre la base discipline et enseignement
+    // TODO : ajouter les valeurs de moyenne et médiane a des arraylist
+    // TODO : creer un dataset par itération des arraylist
+    // TODO : creer un barchart et l'ajouter au dashboard
 
   } // fin du constructeur par défaut
 
@@ -114,23 +121,10 @@ public class Reporting {
 
   public void Vuegraphique(DefaultPieDataset datasetPieChart){
 
-    // ajouter le pie chart au dashboard
-    // affichage du pie chart après construction
-    // create a chart...
-    JFreeChart chart = ChartFactory.createPieChart(
-    "Sample Pie Chart",
-    datasetPieChart,
-    true, // legend?
-    true, // tooltips?
-    false // URLs?
-    );
-    // create and display a frame...
-    ChartFrame Pieframe = new ChartFrame("Année", chart);
     Dashboard dash = new Dashboard();
+    dash.setLayout(new BorderLayout());
+    PieChart Pie = new PieChart(dash,datasetPieChart);
 
-
-
-    // dash.getContentPane().add(Pieframe,BorderLayout.LINE_START);
     // ajout au centre le bar chart
     // dash.container.add(button, BorderLayout.CENTER);
     // ajout à droite du line chart
