@@ -613,7 +613,11 @@ public class EditInterface extends javax.swing.JFrame {
         bul_btn_sup.setText("Supprimer");
         bul_btn_sup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bul_btn_supActionPerformed(evt);
+                try {
+                    bul_btn_supActionPerformed(evt);
+                } catch (SQLException ex) {
+                    Logger.getLogger(EditInterface.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
 
@@ -822,7 +826,7 @@ public class EditInterface extends javax.swing.JFrame {
         String selectedText = (String)ens_com_prof.getSelectedItem().toString(); // it works
         String[] splited = selectedText.split(" ");   
         ArrayList res = AccessCo.con.remplirChampsRequete("Select id from personne where nom='"+splited[0]+"' AND prenom='"+splited[1]+"'");
-        System.out.println(res);
+        System.out.println(res+"id personne");
         String prof_id = (String) res.get(0);
                 System.out.println(prof_id);
         int pid= Integer.parseInt((String) res.get(0));
@@ -875,8 +879,17 @@ public class EditInterface extends javax.swing.JFrame {
 
     }                                           
 
-    private void bul_btn_supActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void bul_btn_supActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {                                            
         // TODO add your handling code here:
+        String selectedText = (String)bul_com_eleve.getSelectedItem().toString(); // it works
+        String[] splited = selectedText.split(" ");   
+
+        ArrayList res = AccessCo.con.remplirChampsRequete("Select id from personne where nom='"+splited[0]+"' AND prenom='"+splited[1]+"'");
+        int ii=Integer.parseInt((String) res.get(0));      
+        ArrayList res2 = AccessCo.con.remplirChampsRequete("Select id from inscription where personneid="+ii);
+        int inscr_id=Integer.parseInt((String) res2.get(0));
+        AccessCo.con.executeUpdate("Delete from bulletin where trimestreId="+bul_com_trimestre.getSelectedIndex()+1+" and inscriptionid="+inscr_id);  
+
     }                                           
 
     private void bul_com_trimestreActionPerformed(java.awt.event.ActionEvent evt) {                                                  
