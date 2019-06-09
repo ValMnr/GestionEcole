@@ -129,6 +129,26 @@ public class DisciplineDAO extends DAO<Discipline>{
     return listeNote;
   }
 
+  /**
+   *
+   * récuperation de la liste des notes avec en paramètres un enseignement
+     * @param idMatiere
+     * @return
+   */
+  public ArrayList<String> getNomDiscipline(int idMatiere){
+      ArrayList<String> result = new ArrayList<String>();
+       try{
+
+          Connexion connex = this.getConnex();
+          result = connex.remplirChampsRequete("SELECT nom FROM discipline WHERE id ="+idMatiere);
+
+       }catch (NumberFormatException | SQLException e) {
+        System.out.println(e);
+      }
+
+    return result;
+  }
+
 
 
 

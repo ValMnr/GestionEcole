@@ -19,5 +19,7 @@ SELECT note FROM evaluation
     INNER JOIN discipline ON disciplineId = 1 ;
 
 
+SELECT nom FROM discipline WHERE id =;
+
 -- ID = enseignement.getID(); : pour récupérer la valeur de l'id de
 -- simplifier aussi la réqueter sql et ne faire qu'une seule jointure
