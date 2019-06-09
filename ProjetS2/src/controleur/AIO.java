@@ -17,7 +17,8 @@ public class AIO {
     
     public AIO() throws SQLException{
        System.out.println("Lancement vue AIO");
-       AllInOne view = new AllInOne();
+       //AllInOne view = new AllInOne();
+       EditInterface view = new EditInterface();
        view.setVisible(true);
     }
     

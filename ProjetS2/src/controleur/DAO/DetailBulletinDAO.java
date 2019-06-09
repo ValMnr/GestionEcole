@@ -97,7 +97,7 @@ public class DetailBulletinDAO extends DAO<DetailBulletin>{
         
          
      }catch (Exception e) {
-      e.printStackTrace();
+      //e.printStackTrace();
     }
      
     //return ann;

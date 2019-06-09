@@ -101,8 +101,7 @@ public class AnneeScolaireDAO extends DAO<AnneeScolaire> {
          result = connex.remplirChampsRequete("SELECT * From anneescolaire where id="+id);
 
      }catch (Exception e) {
-      e.printStackTrace();
-    }
+     }
 
     //return ann;
     return result.size();

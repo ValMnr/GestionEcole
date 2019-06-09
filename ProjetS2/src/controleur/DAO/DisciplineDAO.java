@@ -88,15 +88,11 @@ public class DisciplineDAO extends DAO<Discipline>{
         Connexion connex = this.getConnex();
          
         result = connex.remplirChampsRequete("SELECT * From discipline where id="+id);         
-        System.out.println(result);
         String[] res= result.get(0).split(",");
-                System.out.println(res[0]+"'"+res[1]);
-
-        ann= new Discipline(Integer.parseInt(res[0]),res[1]);
-        
+        ann= new Discipline(Integer.parseInt(res[0]),res[1]);       
          
      }catch (Exception e) {
-      e.printStackTrace();
+     // e.printStackTrace();
     }
      
     //return ann;

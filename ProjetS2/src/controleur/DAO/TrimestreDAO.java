@@ -68,7 +68,7 @@ public class TrimestreDAO extends DAO<Trimestre> {
          trim= new Trimestre(Integer.parseInt( parts[0]),Integer.parseInt( parts[1]),parts[2],parts[3],Integer.parseInt( parts[4]));
 
      }catch (Exception e) {
-      e.printStackTrace();
+      //e.printStackTrace();
     }
 
     return trim;

@@ -17,7 +17,7 @@ import vue.*;
 
                 String namedb="ecole";
                 String login="root";
-                String password="tiger";
+                String password="";
 
                 Connexion connex1 = new Connexion(namedb,login,password);
                 AccessCo co = new AccessCo(connex1);            
@@ -36,19 +36,10 @@ import vue.*;
                 
                 
                 
-                
-                
-                AccessCo co = new AccessCo(connex1);
+               
 
 
-                DAO<Bulletin> bulDAO = new BulletinDAO(connex1);
-                Bulletin tst = bulDAO.find(4);
-
-                Modification mod = new Modification(tst);
-
-
-*/
-
+/*
 
 
                 // DAO<Trimestre> trimestreDao = new TrimestreDAO(connex1);
@@ -95,6 +86,6 @@ import vue.*;
                   } // end of switch
                 } while (!choice.equals("q")); // end of loop
                 // if end of the while loop
-                System.exit(0);
+                System.exit(0); */
  	 } // end of the main
  } // end of the class

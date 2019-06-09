@@ -86,7 +86,7 @@ public class InscriptionDAO extends DAO<Inscription>{
          bull= new Inscription(Integer.parseInt( parts[0]),Integer.parseInt( parts[1]),Integer.parseInt( parts[2]));
          
      }catch (Exception e) {
-      e.printStackTrace();
+     // e.printStackTrace();
     }
      
     return bull;

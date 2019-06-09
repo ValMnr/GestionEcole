@@ -101,8 +101,6 @@ public class PersonneDAO extends DAO<Personne> {
      }catch (Exception e) {
       //e.printStackTrace();
     }
-     
-    //return ann;
     return ann ;
   }
 }

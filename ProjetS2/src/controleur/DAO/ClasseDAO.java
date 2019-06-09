@@ -96,7 +96,7 @@ public class ClasseDAO extends DAO<Classe>{
 
 
      }catch (Exception e) {
-      e.printStackTrace();
+     // e.printStackTrace();
     }
 
     //return ann;

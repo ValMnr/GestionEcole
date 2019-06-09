@@ -32,10 +32,10 @@ public class EnseignementDAO extends DAO<Enseignement> {
     }
 
   public boolean create(Enseignement obj) {
-       Connexion connex = this.getConnex();
-    String values = obj.getId()+","+obj.getClasseId()+","+obj.getDisciplineId()+","+obj.getPersonneId();
-    String req ="INSERT INTO enseignement VALUES("+values+")";
-                System.out.println(req);
+    Connexion connex = this.getConnex();
+    System.out.println(obj.getId()+"-"+obj.getClasseId()+"-"+obj.getDisciplineId()+"-"+obj.getPersonneId());
+    String values =obj.getClasseId()+","+obj.getDisciplineId()+","+obj.getPersonneId();
+    String req ="INSERT INTO enseignement (classeId,disciplineId,personneId)VALUES("+values+")";
 
     try {
             connex.executeUpdate(req);
@@ -94,7 +94,7 @@ public class EnseignementDAO extends DAO<Enseignement> {
 
 
      }catch (Exception e) {
-      e.printStackTrace();
+      //e.printStackTrace();
     }
 
     //return enseign;
@@ -121,7 +121,7 @@ public class EnseignementDAO extends DAO<Enseignement> {
           }
 
        }catch (NumberFormatException | SQLException e) {
-        System.out.println(e);
+        //System.out.println(e);
       }
 
     return listeNote;

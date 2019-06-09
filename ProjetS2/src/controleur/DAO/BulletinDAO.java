@@ -90,7 +90,7 @@ public class BulletinDAO extends DAO<Bulletin>{
          bull= new Bulletin(Integer.parseInt( parts[0]),Integer.parseInt( parts[1]),Integer.parseInt( parts[2]),parts[3]);
          
      }catch (Exception e) {
-      e.printStackTrace();
+      .//e.printStackTrace();
     }
      
     return bull;
