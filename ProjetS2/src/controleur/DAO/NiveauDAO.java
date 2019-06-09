@@ -32,8 +32,8 @@ public class NiveauDAO extends DAO<Niveau> {
 
   public boolean create(Niveau obj) {
        Connexion connex = this.getConnex();
-    String values = obj.getId()+",'"+obj.getNom()+"'";
-    String req ="INSERT INTO niveau VALUES("+values+")";
+    String values = obj.getNom()+"'";
+    String req ="INSERT INTO niveau (nom) VALUES("+values+")";
                 System.out.println(req);
 
     try {         

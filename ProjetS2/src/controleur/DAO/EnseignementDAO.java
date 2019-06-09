@@ -33,7 +33,6 @@ public class EnseignementDAO extends DAO<Enseignement> {
 
   public boolean create(Enseignement obj) {
     Connexion connex = this.getConnex();
-    System.out.println(obj.getId()+"-"+obj.getClasseId()+"-"+obj.getDisciplineId()+"-"+obj.getPersonneId());
     String values =obj.getClasseId()+","+obj.getDisciplineId()+","+obj.getPersonneId();
     String req ="INSERT INTO enseignement (classeId,disciplineId,personneId)VALUES("+values+")";
 

@@ -31,8 +31,8 @@ public class DisciplineDAO extends DAO<Discipline>{
     
     public boolean create(Discipline obj) {
     Connexion connex = this.getConnex();
-    String values = obj.getId()+",'"+obj.getNom()+"'";
-    String req ="INSERT INTO discipline VALUES("+values+")";
+    String values = obj.getNom()+"'";
+    String req ="INSERT INTO discipline (nom) VALUES("+values+")";
                 System.out.println(req);
 
     try {         

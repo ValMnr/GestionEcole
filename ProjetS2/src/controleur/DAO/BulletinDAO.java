@@ -33,9 +33,9 @@ public class BulletinDAO extends DAO<Bulletin>{
 
   public boolean create(Bulletin obj) {
        Connexion connex = this.getConnex();
-       String values = "'"+obj.getId()+"','"+obj.getTrimestreId()+"','"+obj.getInscriptionId()+"','"+obj.getAppreciation()+"'";
+       String values = obj.getTrimestreId()+"','"+obj.getInscriptionId()+"','"+obj.getAppreciation()+"'";
         try {         
-            connex.executeUpdate("INSERT INTO bulletin VALUES("+values+")");
+            connex.executeUpdate("INSERT INTO bulletin (trimestreId,inscriptionId,appreciationId) VALUES("+values+")");
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(BulletinDAO.class.getName()).log(Level.SEVERE, null, ex);

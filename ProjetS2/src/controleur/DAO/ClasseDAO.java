@@ -37,8 +37,8 @@ public class ClasseDAO extends DAO<Classe>{
      @Override
   public boolean create(Classe obj) {
        Connexion connex = this.getConnex();
-    String values = obj.getId()+",'"+obj.getNom()+"',"+obj.getEcoleId()+","+obj.getNiveauId()+","+obj.getAnneeScolaireId();
-    String req ="INSERT INTO classe VALUES("+values+")";
+    String values = obj.getNom()+"',"+obj.getEcoleId()+","+obj.getNiveauId()+","+obj.getAnneeScolaireId();
+    String req ="INSERT INTO classe (nom,ecoleId,niveauId,anneescolaireId) VALUES("+values+")";
                 System.out.println(req);
 
     try {

@@ -32,8 +32,8 @@ public class DetailBulletinDAO extends DAO<DetailBulletin>{
     @Override
     public boolean create(DetailBulletin obj) {
     Connexion connex = this.getConnex();
-    String values = obj.getId()+",'"+obj.getBulletinId()+"',"+obj.getEnseignementId()+",'"+obj.getAppreciation()+"'";
-    String req ="INSERT INTO detailbulletin VALUES("+values+")";
+    String values = obj.getBulletinId()+"',"+obj.getEnseignementId()+",'"+obj.getAppreciation()+"'";
+    String req ="INSERT INTO detailbulletin (bulletinId, enseignementId, appreciationId) VALUES("+values+")";
                 System.out.println(req);
 
     try {         

@@ -211,6 +211,14 @@ public class Connexion {
         stmt.executeUpdate(requeteMaj);
     }
 
+    public String requetes(String select_from_personne_ORDER_BY_id_DESC_LIM) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void requetesMaj(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 }
 

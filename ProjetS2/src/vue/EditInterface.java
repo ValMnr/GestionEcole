@@ -22,12 +22,19 @@ import modele.Personne;
  */
 public class EditInterface extends javax.swing.JFrame {
 
+    private int step;
     /**
      * Creates new form Test
      */
     public EditInterface() throws SQLException {
         initComponents();
-        this.get_liste_trimestre();
+        int step=0;
+    }
+    public int getStep(){
+        return this.step;
+    }
+    public void setStep(int a){
+        this.step=a;
     }
         
     public void display_error(){
@@ -39,12 +46,13 @@ public class EditInterface extends javax.swing.JFrame {
         List<String> list = new ArrayList<String>();
         String crt;
         Personne p = new Personne();
-        for(int i=1;i<=AccessCo.PersonneDAO.getSize();i++){
+        ArrayList size_str = AccessCo.con.remplirChampsRequete("select id from personne ORDER BY id DESC LIMIT 1");
+        int size = Integer.parseInt((String) size_str.get(0));
+        for(int i=1;i<=size;i++){
            // System.out.print("ok");
             try{
                p=AccessCo.PersonneDAO.find(i);
               }catch(IndexOutOfBoundsException e){
-                System.out.print("ok");
                 }
             if(p.getType()==type){
             crt = AccessCo.PersonneDAO.find(i).getPrenom()+" "+AccessCo.PersonneDAO.find(i).getNom();
@@ -58,14 +66,16 @@ public class EditInterface extends javax.swing.JFrame {
         List<String> list = new ArrayList<String>();
         String crt, discipline,classe;
         Enseignement p = new Enseignement();
+        ArrayList size_str = AccessCo.con.remplirChampsRequete("select id from enseignement ORDER BY id DESC LIMIT 1");
+        int size = Integer.parseInt((String) size_str.get(0));
         
-        for(int i=1;i<=AccessCo.EnseignementDAO.getSize();i++){
+        for(int i=1;i<=size;i++){
             try{
                p=AccessCo.EnseignementDAO.find(i);
               }catch(IndexOutOfBoundsException e){
                 }
-            if (p.getId()!=0){
-               crt=AccessCo.ClasseDAO.find( p.getClasseId()).getNom()+" "+AccessCo.DisciplineDAO.find( p.getDisciplineId()).getNom();
+            if (p.getId()!=0 && p.getClasseId()!=0 && p.getDisciplineId()!=0 && p.getPersonneId()!=0 ){
+               crt=AccessCo.ClasseDAO.find( p.getClasseId()).getNom()+" - "+AccessCo.DisciplineDAO.find( p.getDisciplineId()).getNom()+" - "+AccessCo.PersonneDAO.find(p.getPersonneId()).getNom()+" "+AccessCo.PersonneDAO.find(p.getPersonneId()).getPrenom();
                list.add(crt);
             
             }
@@ -592,7 +602,11 @@ public class EditInterface extends javax.swing.JFrame {
         bul_btn_mod.setText("Modifier");
         bul_btn_mod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bul_btn_modActionPerformed(evt);
+                try {
+                    bul_btn_modActionPerformed(evt);
+                } catch (SQLException ex) {
+                    Logger.getLogger(EditInterface.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
 
@@ -709,7 +723,8 @@ public class EditInterface extends javax.swing.JFrame {
             display_error();
         }
         else{
-            Personne p = new Personne((AccessCo.PersonneDAO.getSize()+1),elv_txt_nom.getText(),elv_txt_prenom.getText(),2);
+            Personne p = new Personne(0,prof_txt_nom.getText(),prof_txt_prenom.getText(),2);
+         
             AccessCo.PersonneDAO.create(p);
             prof_list.setModel(new javax.swing.AbstractListModel<String>() {
                 String[] strings = get_liste_personne(2);
@@ -752,6 +767,7 @@ public class EditInterface extends javax.swing.JFrame {
         else{
             Personne p = new Personne((AccessCo.PersonneDAO.getSize()+1),elv_txt_nom.getText(),elv_txt_prenom.getText(),1);
             AccessCo.PersonneDAO.create(p);
+            System.out.println("Eleve ajouté");
             elv_list.setModel(new javax.swing.AbstractListModel<String>() {
                 String[] strings = get_liste_personne(1);
                 public int getSize() { return strings.length; }
@@ -763,14 +779,17 @@ public class EditInterface extends javax.swing.JFrame {
 
     private void elv_btn_supActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {                                            
         // TODO add your handling code here:
-        String selectedText = (String)elv_list.getSelectedValue(); // it works
+
+        String selectedText = (String)elv_list.getSelectedValue(); 
         String[] splited = selectedText.split(" ");       
         AccessCo.con.executeUpdate("Delete from personne where nom='"+splited[0]+"' AND prenom='"+splited[1]+"'");
         elv_list.setModel(new javax.swing.AbstractListModel<String>() {
         String[] strings = get_liste_personne(1);
         public int getSize() { return strings.length; }
         public String getElementAt(int i) { return strings[i]; }
-        });  
+        }); 
+        
+        
     }                                           
 
     private void ens_btn_supActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {                                            
@@ -803,6 +822,7 @@ public class EditInterface extends javax.swing.JFrame {
         String selectedText = (String)ens_com_prof.getSelectedItem().toString(); // it works
         String[] splited = selectedText.split(" ");   
         ArrayList res = AccessCo.con.remplirChampsRequete("Select id from personne where nom='"+splited[0]+"' AND prenom='"+splited[1]+"'");
+        System.out.println(res);
         String prof_id = (String) res.get(0);
                 System.out.println(prof_id);
         int pid= Integer.parseInt((String) res.get(0));
@@ -823,8 +843,36 @@ public class EditInterface extends javax.swing.JFrame {
         
     }                                           
 
-    private void bul_btn_modActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void bul_btn_modActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {                                            
         // TODO add your handling code here:
+        
+                  String selectedText = (String)bul_com_eleve.getSelectedItem().toString(); // it works
+        String[] splited = selectedText.split(" ");   
+
+        ArrayList res = AccessCo.con.remplirChampsRequete("Select id from personne where nom='"+splited[0]+"' AND prenom='"+splited[1]+"'");
+        int ii=Integer.parseInt((String) res.get(0));      
+        ArrayList res2 = AccessCo.con.remplirChampsRequete("Select id from inscription where personneid="+ii);
+        int inscr_id=Integer.parseInt((String) res2.get(0));
+          ArrayList last_rep=  AccessCo.con.remplirChampsRequete("Select appreciation from bulletin where trimestreId="+bul_com_trimestre.getSelectedIndex()+1+" and inscriptionid="+inscr_id);  
+
+        if (this.getStep()==0){
+   
+            String str = "TESt";
+            
+            str = (String) last_rep.get(0);
+            
+            bul_txtarea_app.setText(str);
+            this.setStep(1);
+        }
+        else {
+            ArrayList last_rep2=  AccessCo.con.remplirChampsRequete("Select id from bulletin where trimestreId="+bul_com_trimestre.getSelectedIndex()+1+" and inscriptionid="+inscr_id);            
+            AccessCo.con.executeUpdate("Update bulletin set appreciation='"+bul_txtarea_app.getText()+"' Where trimestreId="+bul_com_trimestre.getSelectedIndex()+1+" and inscriptionid="+inscr_id);
+            bul_txtarea_app.setText("");
+            this.setStep(0);
+        }
+        
+        
+
     }                                           
 
     private void bul_btn_supActionPerformed(java.awt.event.ActionEvent evt) {                                            

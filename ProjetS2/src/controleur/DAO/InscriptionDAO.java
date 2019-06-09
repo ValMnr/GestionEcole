@@ -33,9 +33,9 @@ public class InscriptionDAO extends DAO<Inscription>{
 
   public boolean create(Inscription obj) {
        Connexion connex = this.getConnex();
-       String values = "'"+obj.getId()+"','"+obj.getClasseId()+"','"+obj.getPersonneId()+"'";
+       String values = obj.getClasseId()+"','"+obj.getPersonneId()+"'";
         try {         
-            connex.executeUpdate("INSERT INTO inscription VALUES("+values+")");
+            connex.executeUpdate("INSERT INTO inscription (classeId,personneId) VALUES("+values+")");
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(BulletinDAO.class.getName()).log(Level.SEVERE, null, ex);

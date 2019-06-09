@@ -25,9 +25,9 @@ public class TrimestreDAO extends DAO<Trimestre> {
     @Override
   public boolean create(Trimestre obj) {
        Connexion connex = this.getConnex();
-       String values = "'"+obj.getId()+"','"+obj.getNumero()+"','"+obj.getDebut()+"','"+obj.getFin()+"','"+obj.getAnneId()+"'";
+       String values = obj.getNumero()+"','"+obj.getDebut()+"','"+obj.getFin()+"','"+obj.getAnneId()+"'";
         try {
-            connex.executeUpdate("INSERT INTO trimestre VALUES("+values+")");
+            connex.executeUpdate("INSERT INTO trimestre(numero,debut,fin,anneeId) VALUES("+values+")");
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(TrimestreDAO.class.getName()).log(Level.SEVERE, null, ex);

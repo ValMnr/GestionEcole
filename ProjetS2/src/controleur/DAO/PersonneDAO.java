@@ -32,8 +32,9 @@ public class PersonneDAO extends DAO<Personne> {
 
   public boolean create(Personne obj) {
        Connexion connex = this.getConnex();
-    String values = obj.getId()+",'"+obj.getNom()+"','"+obj.getPrenom()+"',"+obj.getType();
-    String req ="INSERT INTO personne VALUES("+values+")";
+    String values = "'"+obj.getNom()+"','"+obj.getPrenom()+"',"+obj.getType();
+    
+    String req ="INSERT INTO personne (nom,prenom,type) VALUES("+values+")";
                 System.out.println(req);
 
     try {         

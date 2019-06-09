@@ -33,8 +33,8 @@ public class EvaluationDAO extends DAO<Evaluation> {
 
   public boolean create(Evaluation obj) {
        Connexion connex = this.getConnex();
-    String values = obj.getId()+","+obj.getDetailBulletinId()+","+obj.getNote()+",'"+obj.getAppreciation()+"'";
-    String req ="INSERT INTO evaluation VALUES("+values+")";
+    String values = obj.getDetailBulletinId()+","+obj.getNote()+",'"+obj.getAppreciation()+"'";
+    String req ="INSERT INTO evaluation (detailbulletinId,note,appreciation) VALUES("+values+")";
                 System.out.println(req);
 
     try {         
