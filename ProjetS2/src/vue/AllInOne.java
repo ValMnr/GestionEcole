@@ -143,7 +143,11 @@ public class AllInOne extends javax.swing.JFrame {
         btn_elv_sup.setText("Supprimer");
         btn_elv_sup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_elv_supActionPerformed(evt);
+                try {
+                    btn_elv_supActionPerformed(evt);
+                } catch (SQLException ex) {
+                    Logger.getLogger(AllInOne.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
 
@@ -502,7 +506,7 @@ public class AllInOne extends javax.swing.JFrame {
         //JOptionPane.showMessageDialog(null, "Vous allez supprimer : "+AccessCo.PersonneDAO.find(list_elv.getSelectedIndex()+1).getNom());
 
         //AccessCo.PersonneDAO.delete_by_id(list_elv.getSelectedIndex()+1);
-        AccessCo.PersonneDAO.delete_by_name(String nom,String prenom);
+        // AccessCo.PersonneDAO.delete_by_name(String nom,String prenom);
         list_elv.setModel(new javax.swing.AbstractListModel<String>() {
         String[] strings = get_liste_personne(1);
         public int getSize() { return strings.length; }

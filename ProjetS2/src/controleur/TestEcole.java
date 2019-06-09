@@ -28,8 +28,8 @@ import vue.*;
                 //Bulletin tst = new Bulletin();
                 //Evaluation tst = bulDAO.find(2);
                 //Ajout mod = new Ajout(tst);
-                
-                
+
+
                 //Modification mod = new Modification(tst);
                 
                 ConnexionInt con = new ConnexionInt();
@@ -44,10 +44,9 @@ import vue.*;
                 
                
 
+                 // AIO viewaio = new AIO();
 
 /*
-
-
                 // DAO<Trimestre> trimestreDao = new TrimestreDAO(connex1);
                 TrimestreDAO trimestreDao = new TrimestreDAO(connex1);
                 AnneeScolaireDAO anneescolaireDAO = new AnneeScolaireDAO(connex1);
@@ -82,7 +81,7 @@ import vue.*;
                     break;
                     case "3" :
                     System.out.println("Reporting");
-                    // create a dataset...
+                    // creates the Reporting
                     Reporting R = new Reporting(co);
                     menu.afficher();
                     break;

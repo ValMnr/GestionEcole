@@ -23,10 +23,15 @@ public class ModifEvaluation extends javax.swing.JFrame {
 
     /**
      * Creates new form ModifEvaluation
+     * @param obj
      */
     public ModifEvaluation(Evaluation obj) {
         initComponents();
         this.eval=obj;
+    }
+
+    private ModifEvaluation() {
+        initComponents();
     }
     public Evaluation getEval(){
         return this.eval;
