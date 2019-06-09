@@ -2,12 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-            <file>file:/C:/Users/Valentin/Desktop/GestionTest/GestionEcole/ProjetS2/src/controleur/TestEcole.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/Reporting.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/Barchart.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/PieChart.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/EditInterface.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/Dashboard.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/DisciplineDAO.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/BulletinDAO.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/TestEcole.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/LineChart.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/InscriptionDAO.java</file>
         </group>
->>>>>>> master
     </open-files>
 </project-private>

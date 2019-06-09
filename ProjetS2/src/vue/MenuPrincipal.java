@@ -7,7 +7,7 @@ package vue;
 
 /**
  *
- * @author manuelpellequer
+ * @author Mario
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
