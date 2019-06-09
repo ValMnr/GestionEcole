@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 import modele.AccessCo;
 import modele.*;
 import modele.Personne;
+import java.io.Serializable;
+
 
 /**
  *
@@ -137,9 +139,10 @@ public class EditInterface extends javax.swing.JFrame {
         }
                 return list.toArray(new String[0]);
     }
-      public String get_appreciation(){
-          
-          
+       
+       
+      public String get_appreciation(){   
+        return null;
       }
     
     
@@ -214,7 +217,7 @@ public class EditInterface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         
         
-        elv_list.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        elv_list.setFont(new java.awt.Font("Nimbus", 0, 18)); // NOI18N
         elv_list.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = get_liste_personne(1);
             public int getSize() { return strings.length; }

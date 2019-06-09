@@ -17,38 +17,38 @@ import modele.Connexion;
  * @author Valentin
  */
 public class BulletinDAO extends DAO<Bulletin>{
- 
+
     public BulletinDAO(Connexion conn){
         super(conn);
-        
+
     }
     public int getSize() throws SQLException{
         ArrayList<String> liste = new ArrayList<>();
-        
+
         liste= connect.remplirChampsRequete("SELECT COUNT(*) FROM bulletin");
-        int size=Integer.parseInt(liste.get(0));       
+        int size=Integer.parseInt(liste.get(0));
         return size;
-         
+
     }
 
   public boolean create(Bulletin obj) {
        Connexion connex = this.getConnex();
        String values = obj.getTrimestreId()+"','"+obj.getInscriptionId()+"','"+obj.getAppreciation()+"'";
-        try {         
+        try {
             connex.executeUpdate("INSERT INTO bulletin (trimestreId,inscriptionId,appreciationId) VALUES("+values+")");
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(BulletinDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-       return false; 
-      
+       return false;
+
   }
 
   public boolean delete(Bulletin obj) {
-      
+
     int id_del=obj.getId();
     Connexion connex = this.getConnex();
-        try {         
+        try {
             connex.executeUpdate("DELETE FROM bulletin where id="+id_del);
             return true;
         } catch (SQLException ex) {
@@ -56,44 +56,44 @@ public class BulletinDAO extends DAO<Bulletin>{
         }
        return false;
   }
-   
+
   public boolean update(Bulletin obj) {
       Connexion connex = this.getConnex();
       int id=obj.getId();
        String values = "id="+obj.getId()+",trimestreId="+obj.getTrimestreId()+",inscriptionId="+obj.getInscriptionId()+",appreciation='"+obj.getAppreciation()+"'";
        String req="UPDATE bulletin SET "+values+" WHERE id="+id;
-       
-       
-       System.out.println(req); 
 
-       try {         
+
+       System.out.println(req);
+
+       try {
             connex.executeUpdate(req);
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(BulletinDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-       return false; 
-        
+       return false;
+
   }
-   
+
   public Bulletin find(int id) {
-      
+
     Bulletin bull= new Bulletin();
     ArrayList<String> result = new ArrayList<String>();
 
-     
+
      try{
-         
+
          Connexion connex = this.getConnex();
-         result = connex.remplirChampsRequete("SELECT * From bulletin where id="+id);         
+         result = connex.remplirChampsRequete("SELECT * From bulletin where id="+id);
          String[] parts = result.get(0).split(",");
          bull= new Bulletin(Integer.parseInt( parts[0]),Integer.parseInt( parts[1]),Integer.parseInt( parts[2]),parts[3]);
-         
+
      }catch (Exception e) {
-      .//e.printStackTrace();
+       System.out.println("Erreur dans la recherche Bulletin : "+e);
     }
-     
+
     return bull;
   }
-     
+
 }

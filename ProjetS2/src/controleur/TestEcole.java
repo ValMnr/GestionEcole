@@ -17,12 +17,12 @@ import vue.*;
 
                 String namedb="ecole";
                 String login="root";
-                String password="";
+                String password="tiger";
 
                 //Connexion connex1 = new Connexion(namedb,login,password);
-                //AccessCo co = new AccessCo(connex1);            
-                
-                
+                //AccessCo co = new AccessCo(connex1);
+
+
 //                DAO<Evaluation> bulDAO = new EvaluationDAO(connex1);
                 //Bulletin tst = bulDAO.find(4);
                 //Bulletin tst = new Bulletin();
@@ -31,18 +31,18 @@ import vue.*;
 
 
                 //Modification mod = new Modification(tst);
-                
+
                 ConnexionInt con = new ConnexionInt();
                 while(con.getStatus()==0){
                     System.out.print("");
                 }
                // ConnexionUI inter = new ConnexionUI();
-                
+
                 AIO viewaio = new AIO();
-                
-                
-                
-               
+
+
+
+
 
                  // AIO viewaio = new AIO();
 
