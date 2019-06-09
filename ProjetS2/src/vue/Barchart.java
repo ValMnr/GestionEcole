@@ -6,6 +6,7 @@
 package vue;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
@@ -14,7 +15,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 /**
  *
- * @author manuelpellequer
+ * @author Mario
  */
 public class Barchart {
 
@@ -61,6 +62,8 @@ public class Barchart {
     );
 
     ChartPanel BarPanel = new ChartPanel(chart);
+    BarPanel.setPreferredSize(new Dimension(500, 270));
+    // setContentPane(BarPanel);
 
     // add to the dashboard
 

@@ -45,7 +45,7 @@ import vue.*;
                 // Modification mod = new Modification(tst);
 
 
-                
+
 
 
 
@@ -83,7 +83,7 @@ import vue.*;
                     break;
                     case "3" :
                     System.out.println("Reporting");
-                    // create a dataset...
+                    // creates the Reporting
                     Reporting R = new Reporting(co);
                     menu.afficher();
                     break;

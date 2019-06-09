@@ -12,7 +12,7 @@ import javax.swing.JButton;
 
 /**
  *
- * @author manuelpellequer
+ * @author Mario
  */
 public class Dashboard extends javax.swing.JFrame {
 

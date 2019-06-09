@@ -19,11 +19,12 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 import vue.Barchart;
 import vue.Dashboard;
+import vue.LineChart;
 import vue.PieChart;
 
 /**
  *
- * @author manuelpellequer
+ * @author Mario
  */
 /**
  *
@@ -42,13 +43,22 @@ public class Reporting {
     // déclaration
     DefaultPieDataset datasetPieChart = new DefaultPieDataset();
     DefaultCategoryDataset datasetBarChart = new DefaultCategoryDataset();
+    DefaultCategoryDataset datasetLineChart = new DefaultCategoryDataset();
 
 
     // Traitements
     datasetPieChart = PieChartDataset(new DefaultPieDataset());
     datasetBarChart = BarchartDataset(new DefaultCategoryDataset());
 
-    Vuegraphique(datasetPieChart,datasetBarChart);
+    // création du dataset de line chart
+    // TODO : nombre d'élèves inscrits par années, par trimestre pour une meilleure granularité
+    datasetLineChart = LineChartDataset(new DefaultCategoryDataset());
+
+
+
+
+    // création de la vue après Traitements des dataset
+    Vuegraphique(datasetPieChart,datasetBarChart,datasetLineChart);
 
   } // fin du constructeur par défaut
   /**
@@ -93,27 +103,25 @@ public class Reporting {
   */
   public DefaultPieDataset PieChartDataset(DefaultPieDataset dataset) throws SQLException{
     // Partie Piechart
+    // TODO : nombre d'élèves par niveau
+    int sommeInscrit = AccessCo.InscriptionDAO.getSize();
 
-    int sommeAnnee = AccessCo.AnneeScolaireDAO.getSize();
-    int sommeTri = AccessCo.TrimestreDAO.getSize();
-
-    List<Integer> tier = new ArrayList<Integer>();
     ArrayList<Double> data = new ArrayList<Double>();
 
     // Requete pour années + Pie Chart
 
-    for (int i= 2015 ; i<2015+sommeAnnee ; i++) {
+    for (int i= 1 ; i<sommeInscrit+1; i++) {
       // recherche des années et ajout à la liste
       try {
-        tier.add(AccessCo.AnneeScolaireDAO.getResult(i));
-        tier.forEach((Integer j) -> {
-            data.add((j* 1.0/sommeAnnee)*100);
-        });
-        int j = 2015;
+        // TODO : récupérer la taille de la liste des résultat
+        // TODO : transformer la taille de la liste en métric
+        List<String> tier = AccessCo.InscriptionDAO.getInscritsNiveau(i);
+        ArrayList<String> niveau = AccessCo.InscriptionDAO.getNiveau(i);
+        data.add((tier.size()* 1.0/sommeInscrit)*100);
+        // a reprendre + à clarifier
         for (Double d : data) {
           // ajout au dataset du pie chart
-          dataset.setValue(String.valueOf(j), d);
-          j++;
+          dataset.setValue(niveau.get(0),d);
         }
       } catch(Exception e) {
         System.out.println("Erreur dataset Piechart : "+e);
@@ -151,14 +159,40 @@ public class Reporting {
       return dataset;
 
   }
+  public DefaultCategoryDataset LineChartDataset(DefaultCategoryDataset dataset) throws SQLException{
+    // TODO : create 6 arraylist and générer la moyenne et la médiane pour chaque matière
+    // TODO : evaluer le lien entre la base discipline et enseignement
+    // TODO : ajouter les valeurs de moyenne et médiane a des arraylist
+    // TODO : creer un dataset par itération des arraylist
+    // TODO : creer un barchart et l'ajouter au dashboard
+      for (int i=2015; i < 2015 + AccessCo.AnneeScolaireDAO.getSize() ;i++ ) {
+        try {
+          ArrayList<String> listeInscrit = AccessCo.InscriptionDAO.getInscrits(i);
+          // ajout au dataset
+          dataset.addValue(listeInscrit.size(), "Nombre d'inscrits",String.valueOf(i));
+        } catch(Exception e) {
+          System.out.println("Erreur dans le dataset du linechart pour la matière index : "+i+" erreur :"+ e);
+        }
+      }
+      return dataset;
 
-  public void Vuegraphique(DefaultPieDataset datasetPieChart,DefaultCategoryDataset datasetBarChart){
+  }
+
+    /**
+     *
+     * @param datasetPieChart
+     * @param datasetBarChart
+     * @param datasetLineChart
+     */
+    public void Vuegraphique(DefaultPieDataset datasetPieChart,DefaultCategoryDataset datasetBarChart,DefaultCategoryDataset datasetLineChart){
 
     Dashboard dash = new Dashboard();
     // dash.setLayout(new BorderLayout());
     PieChart Pie = new PieChart(dash,datasetPieChart);
     // DEBUG : error in BarchartDataset
     Barchart Bar = new Barchart(dash,datasetBarChart);
+
+    LineChart Line = new LineChart(dash,datasetLineChart);
     // Barchart b = new Barchart();
 
 
