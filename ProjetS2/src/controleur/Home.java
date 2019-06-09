@@ -9,7 +9,7 @@ import vue.MenuPrincipal;
 
 /**
  *
- * @author manuelpellequer
+ * @author Mario
  */
 public class Home extends javax.swing.JFrame {
 

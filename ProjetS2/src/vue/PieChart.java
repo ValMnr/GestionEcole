@@ -6,6 +6,7 @@
 package vue;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
@@ -13,7 +14,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 /**
  *
- * @author manuelpellequer
+ * @author Mario
  */
 public class PieChart {
   // constructeur par défaut
@@ -43,7 +44,7 @@ public class PieChart {
   */
   public PieChart(Dashboard dash, DefaultPieDataset dataset) {
     JFreeChart chart = ChartFactory.createPieChart(
-    "Sample Pie Chart",
+    "Pie Chart Répartition Eleve par Division",
     dataset,
     true, // legend?
     true, // tooltips?
@@ -52,9 +53,10 @@ public class PieChart {
     // create and display a frame...
     // try to create a jpanel
     ChartPanel PiePanel = new ChartPanel(chart);
+    PiePanel.setPreferredSize(new Dimension(300, 100));
 
     // add to the dashboard
-    
+
     dash.add(PiePanel,BorderLayout.LINE_START);
   }
 

@@ -19,6 +19,8 @@ import javax.swing.JTabbedPane;
 import modele.AccessCo;
 import modele.*;
 import modele.Personne;
+import java.io.Serializable;
+
 
 /**
  *
@@ -141,8 +143,18 @@ public class EditInterface extends javax.swing.JFrame {
         }
                 return list.toArray(new String[0]);
     }
+<<<<<<< HEAD
   
   
+=======
+       
+       
+      public String get_appreciation(){   
+        return null;
+      }
+    
+    
+>>>>>>> be603168d398b9fa1b60bba3cbae8feef8b55d71
     
     
     
@@ -219,7 +231,7 @@ public class EditInterface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         
         
-        elv_list.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        elv_list.setFont(new java.awt.Font("Nimbus", 0, 18)); // NOI18N
         elv_list.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = get_liste_personne(1);
             public int getSize() { return strings.length; }

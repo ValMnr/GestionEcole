@@ -17,25 +17,37 @@ import vue.*;
 
                 String namedb="ecole";
                 String login="root";
-                String password="";
+                String password="tiger";
 
+<<<<<<< HEAD
                 Connexion connex1 = new Connexion(namedb,login,password);
                 AccessCo co = new AccessCo(connex1);            
                 
                 
+=======
+                //Connexion connex1 = new Connexion(namedb,login,password);
+                //AccessCo co = new AccessCo(connex1);
+
+
+>>>>>>> be603168d398b9fa1b60bba3cbae8feef8b55d71
 //                DAO<Evaluation> bulDAO = new EvaluationDAO(connex1);
                 //Bulletin tst = bulDAO.find(4);
                 //Bulletin tst = new Bulletin();
                 //Evaluation tst = bulDAO.find(2);
                 //Ajout mod = new Ajout(tst);
-                
-                
+
+
                 //Modification mod = new Modification(tst);
+<<<<<<< HEAD
                /* 
+=======
+
+>>>>>>> be603168d398b9fa1b60bba3cbae8feef8b55d71
                 ConnexionInt con = new ConnexionInt();
                 while(con.getStatus()==0){
                     System.out.print("");
                 }
+<<<<<<< HEAD
                 ConnexionUI inter = new ConnexionUI();
                 */
                 AIO viewaio = new AIO();
@@ -43,11 +55,19 @@ import vue.*;
                 
                 
                
+=======
+               // ConnexionUI inter = new ConnexionUI();
 
+                AIO viewaio = new AIO();
+>>>>>>> be603168d398b9fa1b60bba3cbae8feef8b55d71
+
+
+
+
+
+                 // AIO viewaio = new AIO();
 
 /*
-
-
                 // DAO<Trimestre> trimestreDao = new TrimestreDAO(connex1);
                 TrimestreDAO trimestreDao = new TrimestreDAO(connex1);
                 AnneeScolaireDAO anneescolaireDAO = new AnneeScolaireDAO(connex1);
@@ -82,7 +102,7 @@ import vue.*;
                     break;
                     case "3" :
                     System.out.println("Reporting");
-                    // create a dataset...
+                    // creates the Reporting
                     Reporting R = new Reporting(co);
                     menu.afficher();
                     break;

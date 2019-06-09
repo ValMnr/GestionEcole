@@ -3,11 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Valentin/Desktop/GestionV2/GestionEcole/ProjetS2/src/vue/Test.java</file>
             <file>file:/C:/Users/Valentin/Desktop/GestionV2/GestionEcole/ProjetS2/src/controleur/Modification.java</file>
             <file>file:/C:/Users/Valentin/Desktop/GestionV2/GestionEcole/ProjetS2/src/vue/EditInterface.java</file>
             <file>file:/C:/Users/Valentin/Desktop/GestionV2/GestionEcole/ProjetS2/src/controleur/TestEcole.java</file>
             <file>file:/C:/Users/Valentin/Desktop/GestionV2/GestionEcole/ProjetS2/src/controleur/AIO.java</file>
+=======
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/Reporting.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/Barchart.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/PieChart.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/EditInterface.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/Dashboard.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/DisciplineDAO.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/BulletinDAO.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/TestEcole.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/vue/LineChart.java</file>
+            <file>file:/Users/manuelpellequer/Documents/Mario/ECE/ING3/INFO/JAVA/PROJET%20JAVA/GestionEcole/ProjetS2/src/controleur/DAO/InscriptionDAO.java</file>
+>>>>>>> be603168d398b9fa1b60bba3cbae8feef8b55d71
         </group>
     </open-files>
 </project-private>
