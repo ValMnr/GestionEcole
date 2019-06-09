@@ -5,13 +5,17 @@
  */
 package vue;
 
+import controleur.Reporting;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import static java.util.Collections.list;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import modele.AccessCo;
 import modele.*;
 import modele.Personne;
@@ -137,12 +141,8 @@ public class EditInterface extends javax.swing.JFrame {
         }
                 return list.toArray(new String[0]);
     }
-      public String get_appreciation(){
-          
-          
-      }
-    
-    
+  
+  
     
     
     
@@ -156,7 +156,7 @@ public class EditInterface extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() throws SQLException {
-
+        
         jScrollPane5 = new javax.swing.JScrollPane();
         elv_tab = new javax.swing.JTabbedPane();
         elv_panel = new javax.swing.JPanel();
@@ -210,7 +210,12 @@ public class EditInterface extends javax.swing.JFrame {
         bul_txtarea_app = new javax.swing.JTextArea();
         bul_com_trimestre = new javax.swing.JComboBox<>();
         bul_com_eleve = new javax.swing.JComboBox<>();
+        rep_panel = new javax.swing.JPanel(); 
+        jButton1 = new javax.swing.JButton();
 
+        
+
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         
         
@@ -635,6 +640,8 @@ public class EditInterface extends javax.swing.JFrame {
                 bul_com_trimestreActionPerformed(evt);
             }
         });
+                elv_tab.addTab("Reporting", rep_panel);
+
 
         bul_com_eleve.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         bul_com_eleve.setModel(new javax.swing.DefaultComboBoxModel<>(get_liste_personne(1)));
@@ -709,7 +716,34 @@ public class EditInterface extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(elv_tab)
         );
-
+        javax.swing.GroupLayout rep_panelLayout = new javax.swing.GroupLayout(rep_panel);
+        rep_panel.setLayout(rep_panelLayout);
+        rep_panelLayout.setHorizontalGroup(
+            rep_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rep_panelLayout.createSequentialGroup()
+                .addGap(100, 100,100)
+                .addComponent(jButton1)
+                .addContainerGap(371, Short.MAX_VALUE))
+        );
+         rep_panelLayout.setVerticalGroup(
+            rep_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rep_panelLayout.createSequentialGroup()
+                .addGap(202, 202, 202)
+                .addComponent(jButton1)
+                .addContainerGap(204, Short.MAX_VALUE))
+        );
+         
+               jButton1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jButton1.setText("Lancer le reporting");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    jButton1ActionPerformed(evt);
+                } catch (SQLException ex) {
+                    Logger.getLogger(EditInterface.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
         pack();
     }// </editor-fold>                        
 
@@ -794,7 +828,11 @@ public class EditInterface extends javax.swing.JFrame {
         }); 
         
         
-    }                                           
+    }    
+       private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {                                         
+        // TODO add your handling code here:
+        Reporting R = new Reporting();
+    }   
 
     private void ens_btn_supActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {                                            
         // TODO add your handling code here:
@@ -983,6 +1021,11 @@ public class EditInterface extends javax.swing.JFrame {
     private javax.swing.JPanel prof_panel;
     private javax.swing.JTextField prof_txt_nom;
     private javax.swing.JTextField prof_txt_prenom;
+    private javax.swing.JPanel rep_panel;   
+    private javax.swing.JButton jButton1;
+
+    
+
     // End of variables declaration                   
 
 }

@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -11,6 +11,7 @@ import java.util.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import modele.AccessCo;
+import modele.Connexion;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -35,11 +36,12 @@ public class Reporting {
      * @param co
      * @throws java.sql.SQLException
    */
-  public Reporting (AccessCo co) throws SQLException{
-    // dao
-    TrimestreDAO TriD = new TrimestreDAO(co.getCon());
-    AnneeScolaireDAO AnnD = new AnneeScolaireDAO(co.getCon());
-    EnseignementDAO EnsD = new EnseignementDAO(co.getCon());
+  public Reporting () throws SQLException{
+      // dao
+    Connexion co=  AccessCo.con;
+    TrimestreDAO TriD = new TrimestreDAO(co);
+    AnneeScolaireDAO AnnD = new AnneeScolaireDAO(co);
+    EnseignementDAO EnsD = new EnseignementDAO(co);
 
     DefaultPieDataset datasetPieChart = new DefaultPieDataset();
 

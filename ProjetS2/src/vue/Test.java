@@ -80,6 +80,8 @@ public class Test extends javax.swing.JFrame {
         bul_txtarea_app = new javax.swing.JTextArea();
         bul_com_trimestre = new javax.swing.JComboBox<>();
         bul_com_eleve = new javax.swing.JComboBox<>();
+        rep_panel = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -527,6 +529,33 @@ public class Test extends javax.swing.JFrame {
 
         elv_tab.addTab("Bulletin", bul_panel);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jButton1.setText("Lancer le reporting");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout rep_panelLayout = new javax.swing.GroupLayout(rep_panel);
+        rep_panel.setLayout(rep_panelLayout);
+        rep_panelLayout.setHorizontalGroup(
+            rep_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rep_panelLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
+                .addGap(93, 93, 93))
+        );
+        rep_panelLayout.setVerticalGroup(
+            rep_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rep_panelLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(138, Short.MAX_VALUE))
+        );
+
+        elv_tab.addTab("Reporting", rep_panel);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -615,6 +644,10 @@ public class Test extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bul_com_eleveActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -672,6 +705,7 @@ public class Test extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ens_com_prof;
     private javax.swing.JList<String> ens_list;
     private javax.swing.JPanel ens_panel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -698,6 +732,7 @@ public class Test extends javax.swing.JFrame {
     private javax.swing.JPanel prof_panel;
     private javax.swing.JTextField prof_txt_nom;
     private javax.swing.JTextField prof_txt_prenom;
+    private javax.swing.JPanel rep_panel;
     // End of variables declaration//GEN-END:variables
 
 }

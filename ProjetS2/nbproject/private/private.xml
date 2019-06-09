@@ -2,12 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-            <file>file:/C:/Users/Valentin/Desktop/GestionTest/GestionEcole/ProjetS2/src/controleur/TestEcole.java</file>
+            <file>file:/C:/Users/Valentin/Desktop/GestionV2/GestionEcole/ProjetS2/src/vue/Test.java</file>
+            <file>file:/C:/Users/Valentin/Desktop/GestionV2/GestionEcole/ProjetS2/src/controleur/Modification.java</file>
+            <file>file:/C:/Users/Valentin/Desktop/GestionV2/GestionEcole/ProjetS2/src/vue/EditInterface.java</file>
+            <file>file:/C:/Users/Valentin/Desktop/GestionV2/GestionEcole/ProjetS2/src/controleur/TestEcole.java</file>
+            <file>file:/C:/Users/Valentin/Desktop/GestionV2/GestionEcole/ProjetS2/src/controleur/AIO.java</file>
         </group>
->>>>>>> master
     </open-files>
 </project-private>

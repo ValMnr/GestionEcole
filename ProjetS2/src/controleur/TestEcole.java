@@ -19,8 +19,8 @@ import vue.*;
                 String login="root";
                 String password="";
 
-                //Connexion connex1 = new Connexion(namedb,login,password);
-                //AccessCo co = new AccessCo(connex1);            
+                Connexion connex1 = new Connexion(namedb,login,password);
+                AccessCo co = new AccessCo(connex1);            
                 
                 
 //                DAO<Evaluation> bulDAO = new EvaluationDAO(connex1);
@@ -31,15 +31,15 @@ import vue.*;
                 
                 
                 //Modification mod = new Modification(tst);
-                
+               /* 
                 ConnexionInt con = new ConnexionInt();
                 while(con.getStatus()==0){
                     System.out.print("");
                 }
-               // ConnexionUI inter = new ConnexionUI();
-                
+                ConnexionUI inter = new ConnexionUI();
+                */
                 AIO viewaio = new AIO();
-                
+                //Reporting R = new Reporting(co);
                 
                 
                
